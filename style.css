@@ -1,0 +1,11 @@
+.background {
+    background: url("https://plus.unsplash.com/premium_photo-1687509673996-0b9e35d58168?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80") no-repeat center / cover;
+    width: 100%;
+    height: 400px;
+}
+
+.goodbye{
+    background: url("https://img4.thuthuatphanmem.vn/uploads/2020/07/04/anh-dong-bye-bye-cuc-ky-cute-dang-yeu_095520260.gif") no-repeat center;
+    width: 100%;
+    height: 400px;
+}
