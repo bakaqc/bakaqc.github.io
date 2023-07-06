@@ -1,1 +1,0 @@
-# bakaqc.github.io
