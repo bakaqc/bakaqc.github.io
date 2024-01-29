@@ -1,6 +1,6 @@
 # BaKa's Blogs - A React Application
 
-Welcome to the repository for "BaKa's Blogs", a dynamic blogging platform built with React, Vite, Tailwind CSS, and Strapi.
+Welcome to the repository for **BaKa's Blogs**, a dynamic blogging platform built with React, Vite, Tailwind CSS, and Strapi.
 
 ## Overview
 
