@@ -22,7 +22,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex items-center">
-          <h2 className="hidden md:block font-bold text-x">Quoc Chuong</h2>
+          <h2 className="hidden md:block font-bold text-xs">Quoc Chuong</h2>
           <div className="flex items-center">
             <img src={avt} alt="Logo" className="w-20 h-20 m-4 rounded-full" />
           </div>

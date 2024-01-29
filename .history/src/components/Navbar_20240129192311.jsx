@@ -1,6 +1,5 @@
 import React from "react";
 import logo from "../assets/logo.svg";
-import avt from "../assets/avt.svg";
 
 const Navbar = () => {
   return (
@@ -21,12 +20,7 @@ const Navbar = () => {
             <li>PlatForm</li>
           </ul>
         </div>
-        <div className="flex items-center">
-          <h2 className="hidden md:block font-bold text-x">Quoc Chuong</h2>
-          <div className="flex items-center">
-            <img src={avt} alt="Logo" className="w-20 h-20 m-4 rounded-full" />
-          </div>
-        </div>
+        <div className="hidden md:flex sm:mr-10 md:mr-10"></div>
       </div>
     </div>
   );

@@ -22,10 +22,16 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex items-center">
-          <h2 className="hidden md:block font-bold text-x">Quoc Chuong</h2>
+          <h2 className="hidden md:block">Quoc Chuong</h2>
           <div className="flex items-center">
-            <img src={avt} alt="Logo" className="w-20 h-20 m-4 rounded-full" />
+            <img src={avt} alt="Logo" className="w-20 h-20 rounded-full" />
           </div>
+          {/* <img
+            src={avt}
+            alt="avatar"
+            className="sm:ml-10 ss:ml-10 md:ml-3 opacity-[85%] w-full h-[80px]"
+            style={{ borderRadius: "100%" }}
+          /> */}
         </div>
       </div>
     </div>
