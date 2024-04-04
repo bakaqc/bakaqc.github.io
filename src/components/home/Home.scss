@@ -18,7 +18,7 @@
 }
 
 .home__title {
-  font-size: 3rem;
+  font-size: var(--h1-font-size);
   margin-bottom: var(--mb-0-25);
 }
 
@@ -32,7 +32,7 @@
   font-size: var(--h2-font-size);
   padding-left: 5rem;
   font-weight: var(--font-normal);
-  margin-bottom: var(--mb-1);
+  margin-bottom: var(--mb-2);
 }
 
 .home__subtitle::before {
@@ -76,7 +76,10 @@
 }
 
 .home__scroll {
-  margin-left: 9.25rem;
+  margin: 6rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wheel {
@@ -96,12 +99,13 @@
 .home__scroll-name {
   color: var(--title-color);
   font-weight: var(--font-medium);
+  font-size: var(--h3-font-size);
   margin-right: var(--mb-0-25);
   margin-left: 2px;
 }
 
 .home__scroll-arrow {
-  font-size: 1.25rem;
+  font-size: 2rem;
   color: var(--title-color);
 }
 
