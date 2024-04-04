@@ -1,4 +1,3 @@
-import React from "react";
 import "./Home.scss";
 import Social from "./Social";
 import Data from "./Data";
