@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./Header.scss";
-import logo from "../../../public/logo.jpg";
 
 const Header = () => {
   const [Toggle, showMenu] = useState(false);
