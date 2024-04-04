@@ -1,4 +1,3 @@
-import React from "react";
 import Github from "../../assets/images/social/github.jpg";
 import Facebook from "../../assets/images/social/facebook.jpg";
 import Linkedin from "../../assets/images/social/linkedin.jpg";

@@ -1,4 +1,3 @@
-import React from "react";
 import hand from "../../assets/hand.svg";
 import send from "../../assets/send.svg";
 

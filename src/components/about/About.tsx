@@ -1,4 +1,3 @@
-import React from "react";
 import AboutImg from "../../../public/baka.jpg";
 import CV from "../../../public/QuocChuongCV.pdf";
 import file from "../../assets/files.svg";

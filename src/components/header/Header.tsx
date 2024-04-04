@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./Header.scss";
 
 const Header = () => {
   const [Toggle, showMenu] = useState(false);
   const [ActiveLink, setActiveLink] = useState("home");
 
-  const handleClick = (e) => {
-    setActiveLink(e.target.getAttribute("href"));
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    const target = e.target as HTMLAnchorElement;
+    setActiveLink(target.getAttribute("href") ?? "");
   };
 
   useEffect(() => {
