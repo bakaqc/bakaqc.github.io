@@ -1,6 +1,6 @@
-import AboutImg from "../../../public/baka.jpg";
-import CV from "../../../public/QuocChuongCV.pdf";
-import file from "../../assets/files.svg";
+import AboutImg from "../../assets/info/baka.jpg";
+import CV from "../../assets/info/QuocChuongCV.pdf";
+import file from "../../assets/action/files.svg";
 import Info from "./Info";
 import "./About.scss";
 

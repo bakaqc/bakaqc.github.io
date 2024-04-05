@@ -1,5 +1,5 @@
-import hand from "../../assets/hand.svg";
-import send from "../../assets/send.svg";
+import hand from "../../assets/action/hand.svg";
+import send from "../../assets/action/send.svg";
 
 const Data = () => {
   return (

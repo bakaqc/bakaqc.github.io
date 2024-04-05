@@ -1,4 +1,4 @@
-import scroll from "../../assets/scroll.svg";
+import scroll from "../../assets/action/scroll.svg";
 const ScrollDown = () => {
   return (
     <div className="home__scroll">
