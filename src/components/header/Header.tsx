@@ -3,7 +3,7 @@ import "./Header.scss";
 
 const Header = () => {
   const [Toggle, showMenu] = useState(false);
-  const [ActiveLink, setActiveLink] = useState("home");
+  const [ActiveLink, setActiveLink] = useState("#home");
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     const target = e.target as HTMLAnchorElement;
@@ -19,7 +19,7 @@ const Header = () => {
           }
         });
       },
-      { threshold: 0.7 }
+      { threshold: 0.7}
     );
 
     const sections = document.querySelectorAll("section");

@@ -1,23 +1,28 @@
+import React, { Suspense } from "react";
 import "./Home.scss";
-import Social from "./Social";
-import Data from "./Data";
-import ScrollDown from "./ScrollDown";
+import Loading from "../common/Loading";
+
+const Social = React.lazy(() => import("./Social"));
+const Data = React.lazy(() => import("./Data"));
+const ScrollDown = React.lazy(() => import("./ScrollDown"));
 
 const Home = () => {
   return (
-    <section className="home section" id="home">
-      <div className="home__container container grid">
-        <div className="home__content grid">
-          <Social />
-
-          <div className="home__img"></div>
-
-          <Data />
-        </div>
-
-        <ScrollDown />
-      </div>
-    </section>
+    <>
+      <Suspense fallback={<Loading />}>
+        {" "}
+        <section className="home section" id="home">
+          <div className="home__container container grid">
+            <div className="home__content grid">
+              <Social />
+              <div className="home__img"></div>
+              <Data />
+            </div>
+            <ScrollDown />
+          </div>
+        </section>
+      </Suspense>
+    </>
   );
 };
 
