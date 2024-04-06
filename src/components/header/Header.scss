@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   z-index: $z-fixed;
-  background-color: $container-color;
+  background-color: rgba($container-color, 0.8);
 }
 .nav {
   height: calc($header-height + 1.5rem);

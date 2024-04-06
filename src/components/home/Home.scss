@@ -2,7 +2,20 @@
 
 .home__container {
   row-gap: 7rem;
+  animation: slide-up 1s ease-out;
 }
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .home__content {
   grid-template-columns: 116px repeat(2, 1fr);
   padding-top: 5.5rem;
@@ -27,19 +40,6 @@
 .home__hand {
   width: 2.5rem;
   height: 2.5rem;
-  animation: wave 1.5s ease-in-out infinite;
-}
-
-@keyframes wave {
-  0%,
-  100% {
-    transform: rotate(-50deg);
-    animation-timing-function: ease-in-out;
-  }
-  75% {
-    transform: rotate(10deg);
-    animation-timing-function: ease-in-out;
-  }
 }
 
 .home__subtitle {
@@ -73,7 +73,7 @@
   order: 1;
   width: 300px;
   height: 300px;
-  animation: profile__animate 8s ease-in-out infinite 1s;
+  animation: profile__animate 8s ease-in-out infinite;
 }
 
 @keyframes profile__animate {
