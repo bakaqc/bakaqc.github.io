@@ -1,6 +1,21 @@
+@import '../../setup.scss';
+
 .home__container {
   row-gap: 7rem;
+  animation: slide-up 1s ease-out;
 }
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .home__content {
   grid-template-columns: 116px repeat(2, 1fr);
   padding-top: 5.5rem;
@@ -18,21 +33,21 @@
 }
 
 .home__title {
-  font-size: var(--h1-font-size);
-  margin-bottom: var(--mb-0-25);
+  font-size: $h1-font-size;
+  margin-bottom: $mb-0-25;
 }
 
 .home__hand {
-  width: 38px;
-  height: 38px;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .home__subtitle {
   position: relative;
-  font-size: var(--h2-font-size);
+  font-size: $h2-font-size;
   padding-left: 5rem;
-  font-weight: var(--font-normal);
-  margin-bottom: var(--mb-2);
+  font-weight: $font-normal;
+  margin-bottom: $mb-2;
 }
 
 .home__subtitle::before {
@@ -40,25 +55,25 @@
   position: absolute;
   width: 70px;
   height: 2px;
-  background-color: var(--text-color);
+  background-color: $text-color;
   left: 0;
   top: 1rem;
 }
 
 .home__description {
   max-width: 400px;
-  margin-bottom: var(--mb-3);
+  margin-bottom: $mb-3;
 }
 
 .home__img {
-  background: url(../../../public/baka.jpg) no-repeat center;
+  background: url(../../assets/info/baka.jpg) no-repeat center;
   background-size: cover;
   box-shadow: inset 0 0 0 9px rgb(255 255 255 / 30%);
   justify-self: center;
   order: 1;
   width: 300px;
   height: 300px;
-  animation: profile__animate 8s ease-in-out infinite 1s;
+  animation: profile__animate 8s ease-in-out infinite;
 }
 
 @keyframes profile__animate {
@@ -97,16 +112,27 @@
 }
 
 .home__scroll-name {
-  color: var(--title-color);
-  font-weight: var(--font-medium);
-  font-size: var(--h3-font-size);
-  margin-right: var(--mb-0-25);
+  color: $title-color;
+  font-weight: $font-medium;
+  font-size: $h3-font-size;
+  margin-right: $mb-0-25;
   margin-left: 2px;
 }
 
 .home__scroll-arrow {
   font-size: 2rem;
-  color: var(--title-color);
+  color: $title-color;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-15px);
+  }
+  50% {
+    transform: translateY(15px);
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -122,7 +148,7 @@
 
   .home__subtitle {
     padding-left: 3.75rem;
-    margin-bottom: var(--mb-1);
+    margin-bottom: $mb-1;
   }
 
   .home__subtitle::before {
@@ -132,7 +158,7 @@
 
   .home__description {
     max-width: initial;
-    margin-bottom: var(--mb-2-5);
+    margin-bottom: $mb-2-5;
   }
 
   .home__img {
