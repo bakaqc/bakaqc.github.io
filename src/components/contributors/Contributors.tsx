@@ -9,8 +9,8 @@ const Contributors = () => {
   return (
     <>
       <section className="contributors container section" id="qualification">
-        <h2 className="section__title">Contributors</h2>
-        <span className="section__subtitle">My Best Contributors</span>
+        <h2 className="section__title">References</h2>
+        <span className="section__subtitle">My Best References</span>
 
         <Swiper
           className="contributors__container"
