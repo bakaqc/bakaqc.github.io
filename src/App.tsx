@@ -7,7 +7,7 @@ const Home = React.lazy(() => import("./components/home/Home"));
 const About = React.lazy(() => import("./components/about/About"));
 const Skills = React.lazy(() => import("./components/skills/Skills"));
 const Qualification = React.lazy(() => import("./components/qualification/Qualification"));
-
+const Contributors = React.lazy(() => import("./components/contributors/Contributors"));
 
 const App = () => {
   return (
@@ -20,6 +20,7 @@ const App = () => {
           <About />
           <Skills />
           <Qualification />
+          <Contributors />
         </main>
       </Suspense>
     </>

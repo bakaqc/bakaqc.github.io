@@ -10,7 +10,7 @@ const Data = () => {
         </h1>
         <h3 className="home__subtitle">Backend Developer</h3>
         <p className="home__description">
-          🎓 I'm a student at FPT University Quy Nhơn.
+          🎓 I'm a student at FPT University Quy Nhon.
           <br />
           🔭 I’m currently learning Java, React, NodeJS.
         </p>

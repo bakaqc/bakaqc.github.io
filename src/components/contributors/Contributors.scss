@@ -1,0 +1,58 @@
+@import "../../setup.scss";
+
+.contributors {
+  margin-top: 6rem;
+}
+
+.contributors__container {
+  width: 100%;
+}
+
+.contributor__card {
+  background-color: $container-color;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 2rem;
+  border-radius: 1.5rem;
+  margin-bottom: $mb-3;
+}
+
+.contributor__img {
+  width: 60px;
+  border-radius: 3rem;
+  margin-bottom: $mb-1;
+}
+.contributor__name {
+  font-size: $h3-font-size;
+  margin-bottom: $mb-0-25;
+}
+
+.contributor__position {
+  font-size: $normal-font-size;
+  font-weight: $font-normal;
+  color: $topic-color;
+  margin-bottom: $mb-1;
+}
+
+.contributor__description {
+  font-size: $small-font-size;
+  color: $text-color;
+}
+
+.swiper-pagination-bullet {
+  background-color: $text-color !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $topic-color !important;
+}
+
+@media screen and (max-width: 992px) {
+  .contributors__container {
+    width: initial;
+  }
+
+  .contributor__card {
+    padding: 1.25rem 1.5rem;
+  }
+}
+
