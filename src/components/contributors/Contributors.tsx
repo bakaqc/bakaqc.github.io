@@ -8,7 +8,7 @@ import { Pagination } from "swiper/modules";
 const Contributors = () => {
   return (
     <>
-      <section className="contributors container section">
+      <section className="contributors container section" id="qualification">
         <h2 className="section__title">Contributors</h2>
         <span className="section__subtitle">My Best Contributors</span>
 
