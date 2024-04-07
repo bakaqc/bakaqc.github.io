@@ -77,25 +77,26 @@ const Header = () => {
 
               <li className="nav__item">
                 <a
+                  href="#projects"
+                  className={`nav__link ${
+                    ActiveLink === "#project" ? "active-link" : ""
+                  }`}
+                  onClick={handleClick}
+                >
+                  <i className="uil uil-scenery nav__icon"></i> Projects
+                </a>
+              </li>
+
+              <li className="nav__item">
+                <a
                   href="#qualification"
                   className={`nav__link ${
                     ActiveLink === "#qualification" ? "active-link" : ""
                   }`}
                   onClick={handleClick}
                 >
-                  <i className="uil uil-briefcase-alt nav__icon"></i> Qualification
-                </a>
-              </li>
-
-              <li className="nav__item">
-                <a
-                  href="#project"
-                  className={`nav__link ${
-                    ActiveLink === "#project" ? "active-link" : ""
-                  }`}
-                  onClick={handleClick}
-                >
-                  <i className="uil uil-scenery nav__icon"></i> Project
+                  <i className="uil uil-briefcase-alt nav__icon"></i>{" "}
+                  Qualification
                 </a>
               </li>
 
