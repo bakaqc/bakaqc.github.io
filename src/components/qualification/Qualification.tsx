@@ -89,7 +89,7 @@ const Qualification = () => {
               <div className="qualification__data">
                 <div>
                   <h3 className="qualification__title">
-                    Junior High School Students
+                    Junior High School Student
                   </h3>
                   <span className="qualification__subtitle">
                     Nhon Phuc Secondary School
@@ -139,7 +139,7 @@ const Qualification = () => {
                 </div>
 
                 <div>
-                  <h3 className="qualification__title">Students Experience</h3>
+                  <h3 className="qualification__title">Student Experience</h3>
                   <span className="qualification__subtitle">
                     FPT SOFTWARE QUY NHON
                   </span>
