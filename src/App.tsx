@@ -12,7 +12,7 @@ const Qualification = React.lazy(
 const Contributors = React.lazy(
   () => import("./components/contributors/Contributors")
 );
-// const Projects = React.lazy(() => import("./components/projects/Projects"));
+const Projects = React.lazy(() => import("./components/projects/Projects"));
 const Contact = React.lazy(() => import("./components/contact/Contact"));
 const Footer = React.lazy(() => import("./components/footer/Footer"));
 const ScrollUp = React.lazy(() => import("./components/scrollup/ScrollUp"));
@@ -27,7 +27,7 @@ const App = () => {
           <Home />
           <About />
           <Skills />
-          {/* <Projects /> */}
+          <Projects />
           <Qualification />
           <Contributors />
           <Contact />
