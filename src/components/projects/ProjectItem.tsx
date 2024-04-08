@@ -17,12 +17,14 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ item }) => {
   useEffect(() => {
     if (descriptionRef.current) {
       const description = descriptionRef.current;
-      const lineHeight = parseInt(window.getComputedStyle(description)['line-height']);
+      const lineHeight = parseInt(
+        window.getComputedStyle(description).getPropertyValue("line-height")
+      );
       const height = description.clientHeight;
       const lines = Math.floor(height / lineHeight);
 
       if (lines > 2) {
-        description.classList.add('clamped');
+        description.classList.add("clamped");
       }
     }
   }, []);
@@ -32,7 +34,9 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ item }) => {
       <div className="project__card" key={item.id}>
         <img src={item.image} alt={item.title} className="project__img" />
         <h3 className="project__title">{item.title}</h3>
-        <p ref={descriptionRef} className="project__description">{item.description}</p>
+        <p ref={descriptionRef} className="project__description">
+          {item.description}
+        </p>
         <p className="project__role">
           Role:
           <span className="project__role-title"> {item.role}</span>

@@ -14,6 +14,8 @@ const Project = () => {
       title: string;
       category: string;
       github: string;
+      description: string;
+      role: string;
     }[]
   >([]);
   const [active, setActive] = React.useState(0);
@@ -61,9 +63,19 @@ const Project = () => {
         <div className="project__container container grid">
           {projects
             .sort((a, b) => b.id - a.id)
-            .map((item) => {
-              return <ProjectItem key={item.id} item={item} />;
-            })}
+            .map(
+              (item: {
+                id: number;
+                image: string;
+                title: string;
+                category: string;
+                github: string;
+                description: string;
+                role: string;
+              }) => {
+                return <ProjectItem key={item.id} item={item} />;
+              }
+            )}
         </div>
       </Suspense>
     </>
