@@ -8,6 +8,8 @@ export const ProjectsData = [
     title: "LovePik",
     category: "Web",
     github: "https://github.com/bakaqc/flower",
+    description: "PRJ301 project, E-commerce website selling Flowers",
+    role: "Team Leader, Java Backend",
   },
   {
     id: 2,
@@ -15,20 +17,22 @@ export const ProjectsData = [
     title: "SaleDock",
     category: "Web",
     github: "https://github.com/hardingadonis/saledock",
+    description: "SWP391 project, ERP system, Sales module",
+    role: "Java Backend",
   },
 ];
 
 export const ProjectsNav = [
-    {
-        id: 1,
-        name: "All",
-    },
-    {
-        id: 2,
-        name: "Web",
-    },
-    {
-        id: 3,
-        name: "App",
-    }
+  {
+    id: 1,
+    name: "All",
+  },
+  {
+    id: 2,
+    name: "Web",
+  },
+  {
+    id: 3,
+    name: "App",
+  },
 ];

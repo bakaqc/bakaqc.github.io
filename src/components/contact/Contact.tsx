@@ -2,13 +2,17 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./Contact.scss";
 import send from "../../assets/action/send.svg";
+import SyncLoader from "react-spinners/SyncLoader";
 
 const Contact = () => {
   const form = useRef<HTMLFormElement | null>(null);
   const [message, setMessage] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    setIsLoading(true);
 
     if (form.current) {
       emailjs
@@ -19,10 +23,16 @@ const Contact = () => {
           () => {
             (e.target as HTMLFormElement).reset();
             setMessage("SUCCESS");
+            setIsLoading(false);
+
+            setTimeout(() => {
+              setMessage(null);
+            }, 4000);
           },
           (error) => {
             console.log("FAILED", error.text);
             setMessage("FAILED");
+            setIsLoading(false);
           }
         );
     }
@@ -92,6 +102,7 @@ const Contact = () => {
                   name="name"
                   className="contact__form-input"
                   placeholder="Enter your name"
+                  required
                 />
               </div>
 
@@ -102,6 +113,7 @@ const Contact = () => {
                   name="email"
                   className="contact__form-input"
                   placeholder="Enter your email"
+                  required
                 />
               </div>
 
@@ -111,13 +123,26 @@ const Contact = () => {
                   name="project"
                   className="contact__form-input"
                   placeholder="Write your project"
+                  required
                 ></textarea>
               </div>
 
               <div className="contact__form-action">
                 <button type="submit" className="button button--flex">
                   Send Message{" "}
-                  <img src={send} alt="Send" style={{ marginLeft: "0.3rem" }} />
+                  {isLoading ? (
+                    <SyncLoader
+                      color={"#29d9f6"}
+                      size={10}
+                      style={{ marginLeft: "0.5rem" }}
+                    />
+                  ) : (
+                    <img
+                      src={send}
+                      alt="Send"
+                      style={{ marginLeft: "0.3rem" }}
+                    />
+                  )}
                 </button>
 
                 {message && (

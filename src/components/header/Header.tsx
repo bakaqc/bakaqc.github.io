@@ -79,7 +79,7 @@ const Header = () => {
                 <a
                   href="#projects"
                   className={`nav__link ${
-                    ActiveLink === "#project" ? "active-link" : ""
+                    ActiveLink === "#projects" ? "active-link" : ""
                   }`}
                   onClick={handleClick}
                 >
