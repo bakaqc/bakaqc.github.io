@@ -23,6 +23,10 @@
   font-weight: $font-medium;
 }
 
+.nav__logo > i{
+  font-size: 2rem;
+}
+
 .nav__list {
   display: flex;
   gap: 2rem;
