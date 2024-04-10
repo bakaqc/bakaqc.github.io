@@ -1,6 +1,12 @@
 # Quốc Chương Portfolio
 
-- Portfolio use React + TypeScript + Vite + SASS
+![GitHub contributors](https://img.shields.io/github/contributors/bakaqc/bakaqc.github.io)
+![GitHub top language](https://img.shields.io/github/languages/top/bakaqc/bakaqc.github.io)
+![GitHub repo size](https://img.shields.io/github/repo-size/bakaqc/bakaqc.github.io)
+![GitHub License](https://img.shields.io/github/license/bakaqc/bakaqc.github.io)
+
+### TechStack
+<img src="https://skillicons.dev/icons?i=react,typescript,scss,vite,html" />
 
 ### Deployment
 
