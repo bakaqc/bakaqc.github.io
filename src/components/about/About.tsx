@@ -25,7 +25,7 @@ const About = () => {
             </p>
 
             <a download="" href={CV} className="button button--flex">
-              Dowload CV{" "}
+              Download CV{" "}
               <img src={file} alt="CV" style={{ marginLeft: "0.3rem" }} />
             </a>
           </div>
