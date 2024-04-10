@@ -1,5 +1,6 @@
 import hand from "../../assets/action/hand.svg";
 import send from "../../assets/action/send.svg";
+import heart from "../../assets/action/heart.svg";
 
 const Data = () => {
   return (
@@ -15,10 +16,20 @@ const Data = () => {
           🔭 I’m currently learning Java, React, NodeJS.
         </p>
 
-        <a href="#contact" className="button button--flex">
-          Say Hello{" "}
-          <img src={send} alt="Send" style={{ marginLeft: "0.3rem" }} />
-        </a>
+        <div className="button__container">
+          <a href="#contact" className="button button--flex">
+            Say Hello{" "}
+            <img src={send} alt="Send" style={{ marginLeft: "0.3rem" }} />
+          </a>
+          <a
+            href="https://ko-fi.com/bakaqc"
+            className="button button--flex"
+            target="_blank"
+          >
+            Donate{" "}
+            <img src={heart} alt="Heart" style={{ marginLeft: "0.3rem" }} />
+          </a>
+        </div>
       </div>
     </>
   );
