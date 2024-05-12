@@ -20,7 +20,7 @@ const Social = () => {
         </a>
 
         <a
-          href="https://www.facebook.com/dqchuongbk"
+          href="https://www.facebook.com/chuongdq"
           className="home__social-icon"
           target="_blank"
           rel="noopener noreferrer"
