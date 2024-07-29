@@ -71,7 +71,7 @@ const Contact = () => {
                 <i className="bx bxs-phone-call contact__card-icon"></i>
 
                 <h3 className="contact__card__title">Telephone</h3>
-                <span className="contact__card-data">123-456-789</span>
+                <span className="contact__card-data">076 370 7144</span>
               </div>
 
               <div className="contact__card">

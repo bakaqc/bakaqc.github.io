@@ -1,6 +1,5 @@
 import React, { Suspense, useEffect } from "react";
-import { ProjectsData } from "./Data";
-import { ProjectsNav } from "./Data";
+import { ProjectsData , ProjectsNav} from "./Data";
 import Loading from "../common/Loading";
 
 const ProjectItem = React.lazy(() => import("./ProjectItem"));
@@ -33,7 +32,7 @@ const Project = () => {
 
   const handleClick = (e: React.MouseEvent<HTMLElement>, index: number) => {
     const target = e.target as HTMLElement;
-    setItem({ name: target.textContent || "" });
+    setItem({ name: target.textContent ?? "" });
     setActive(index);
   };
 
@@ -41,17 +40,17 @@ const Project = () => {
     <>
       <Suspense fallback={<Loading />}>
         <div className="project__filters">
-          {ProjectsNav.map((item, index) => {
+          {ProjectsNav.map((item) => {
             return (
               <>
                 <span
                   onClick={(e) => {
-                    handleClick(e, index);
+                    handleClick(e, item.id);
                   }}
                   className={`${
-                    active === index ? "active-project" : ""
+                    active === item.id ? "active-project" : ""
                   } project__item`}
-                  key={index}
+                  key={item.id}
                 >
                   {item.name}
                 </span>
