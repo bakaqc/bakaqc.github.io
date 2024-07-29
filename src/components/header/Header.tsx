@@ -22,15 +22,15 @@ useEffect(() => {
     { threshold: 0.7 }
   );
 
-  // Delay observing elements to allow browser to scroll to element specified in URL
-  setTimeout(() => {
+  const observeSections = () => {
     const sections = document.querySelectorAll("section");
     sections.forEach((section) => observer.observe(section));
-
     return () => {
       sections.forEach((section) => observer.unobserve(section));
     };
-  }, 100); // Delay can be adjusted as needed
+  };
+
+  setTimeout(observeSections, 100); 
 }, []);
   return (
     <>
