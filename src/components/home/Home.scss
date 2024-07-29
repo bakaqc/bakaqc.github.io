@@ -32,6 +32,17 @@
   font-size: 1.25rem;
 }
 
+.home__social-icon img {
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none; 
+}
+
+.home__social-icon:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .home__title {
   font-size: $h1-font-size;
   margin-bottom: $mb-0-25;
