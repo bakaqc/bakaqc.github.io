@@ -115,13 +115,13 @@ const Qualification = () => {
             >
               <div className="qualification__data">
                 <div>
-                  <h3 className="qualification__title">Intern</h3>
+                  <h3 className="qualification__title">Intern Tester</h3>
                   <span className="qualification__subtitle">
                     FPT SOFTWARE QUY NHON
                   </span>
                   <div className="qualification__calender">
                     <i className="uil uil-calendar-alt"></i> April 2024 -
-                    Present
+                    August 2024
                   </div>
                 </div>
 
