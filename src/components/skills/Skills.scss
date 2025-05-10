@@ -5,9 +5,12 @@
 }
 
 .skills__container {
-  grid-template-columns: repeat(2, 400px);
-  column-gap: 3rem;
   justify-content: center;
+  text-align: center;
+}
+
+.skills__container img {
+  margin: 10px 0;
 }
 
 .skills__content {

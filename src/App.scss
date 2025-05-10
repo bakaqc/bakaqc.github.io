@@ -72,13 +72,19 @@ img {
   color: $title-color;
 }
 
+.section__header {
+  font-size: $h2-font-size;
+  color: $title-color;
+}
+
 .section__subtitle {
   display: block;
   font-size: $small-font-size;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .section__title,
+.section__header,
 .section__subtitle {
   text-align: center;
 }

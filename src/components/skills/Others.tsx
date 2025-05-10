@@ -11,17 +11,17 @@ type SkillGroup = {
   group: Skill[];
 };
 
-const Backend = () => {
+const Tools = () => {
   const [skills, setSkills] = useState<SkillGroup[]>([]);
 
   useEffect(() => {
-    setSkills(skillsData.backend);
+    setSkills(skillsData.others);
   }, []);
 
   return (
     <>
       <div className="skills__content">
-        <h3 className="skills__title">Backend</h3>
+        <h3 className="skills__title">Orther</h3>
 
         <div className="skills__box">
           {skills.map((group, groupIndex) => (
@@ -44,4 +44,4 @@ const Backend = () => {
   );
 };
 
-export default Backend;
+export default Tools;

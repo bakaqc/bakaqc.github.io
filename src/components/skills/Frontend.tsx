@@ -1,67 +1,43 @@
+import { useEffect, useState } from "react";
+import skillsData from "../../../data/skills.json";
+
+type Skill = {
+  icon: string;
+  name: string;
+  level: string;
+};
+
+type SkillGroup = {
+  group: Skill[];
+};
+
 const Frontend = () => {
+  const [skills, setSkills] = useState<SkillGroup[]>([]);
+
+  useEffect(() => {
+    setSkills(skillsData.frontend);
+  }, []);
+
   return (
     <>
       <div className="skills__content">
         <h3 className="skills__title">Frontend</h3>
 
         <div className="skills__box">
-          <div className="skills__group">
-            <div className="skills__data">
-              <i className="bx bxl-html5"></i>
+          {skills.map((group, groupIndex) => (
+            <div className="skills__group" key={groupIndex}>
+              {group.group.map((skill, skillIndex) => (
+                <div className="skills__data" key={skillIndex}>
+                  <i className={skill.icon}></i>
 
-              <div>
-                <h3 className="skills__name">HTML</h3>
-                <span className="skills__level">Basic</span>
-              </div>
+                  <div>
+                    <h3 className="skills__name">{skill.name}</h3>
+                    <span className="skills__level">{skill.level}</span>
+                  </div>
+                </div>
+              ))}
             </div>
-
-            <div className="skills__data">
-              <i className="bx bxl-css3"></i>
-
-              <div>
-                <h3 className="skills__name">CSS</h3>
-                <span className="skills__level">Advanced</span>
-              </div>
-            </div>
-
-            <div className="skills__data">
-              <i className="bx bxl-javascript"></i>
-
-              <div>
-                <h3 className="skills__name">JavaScript</h3>
-                <span className="skills__level">Intermediate</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="skills__group">
-            <div className="skills__data">
-              <i className="bx bxl-typescript"></i>
-
-              <div>
-                <h3 className="skills__name">TypeScript</h3>
-                <span className="skills__level">Basic</span>
-              </div>
-            </div>
-
-            <div className="skills__data">
-              <i className="bx bxl-bootstrap"></i>
-
-              <div>
-                <h3 className="skills__name">Bootstrap</h3>
-                <span className="skills__level">Intermediate</span>
-              </div>
-            </div>
-
-            <div className="skills__data">
-              <i className="bx bxl-react"></i>
-
-              <div>
-                <h3 className="skills__name">React</h3>
-                <span className="skills__level">Intermediate</span>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </>

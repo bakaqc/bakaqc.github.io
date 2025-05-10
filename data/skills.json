@@ -1,0 +1,112 @@
+{
+  "backend": [
+    {
+      "group": [
+        {
+          "icon": "bx bxl-c-plus-plus",
+          "name": "C++",
+          "level": "Basic"
+        },
+        {
+          "icon": "bx bxl-java",
+          "name": "Java",
+          "level": "Intermediate"
+        },
+        {
+          "icon": "bx bxl-nodejs",
+          "name": "NodeJS",
+          "level": "Basic"
+        }
+      ]
+    },
+    {
+      "group": [
+        {
+          "icon": "bx bxs-data",
+          "name": "SQL",
+          "level": "Intermediate"
+        },
+        {
+          "icon": "bx bxs-data",
+          "name": "MySQL",
+          "level": "Intermediate"
+        },
+        {
+          "icon": "bx bxl-mongodb",
+          "name": "Mongodb",
+          "level": "Basic"
+        }
+      ]
+    }
+  ],
+  "frontend": [
+    {
+      "group": [
+        {
+          "icon": "bx bxl-html5",
+          "name": "HTML",
+          "level": "Basic"
+        },
+        {
+          "icon": "bx bxl-css3",
+          "name": "CSS",
+          "level": "Advanced"
+        },
+        {
+          "icon": "bx bxl-javascript",
+          "name": "JavaScript",
+          "level": "Intermediate"
+        }
+      ]
+    },
+    {
+      "group": [
+        {
+          "icon": "bx bxl-typescript",
+          "name": "TypeScript",
+          "level": "Basic"
+        },
+        {
+          "icon": "bx bxl-bootstrap",
+          "name": "Bootstrap",
+          "level": "Intermediate"
+        },
+        {
+          "icon": "bx bxl-react",
+          "name": "React",
+          "level": "Intermediate"
+        }
+      ]
+    }
+  ],
+  "others": [
+    {
+      "group": [
+        {
+          "icon": "bx bxl-git",
+          "name": "Git",
+          "level": "Intermediate"
+        },
+        {
+          "icon": "bx bxl-github",
+          "name": "Github",
+          "level": "Intermediate"
+        }
+      ]
+    },
+    {
+      "group": [
+        {
+          "icon": "bx bxl-docker",
+          "name": "Docker",
+          "level": "Basic"
+        },
+        {
+          "icon": "bx bxl-visual-studio",
+          "name": "VSCode",
+          "level": "Intermediate"
+        }
+      ]
+    }
+  ]
+}

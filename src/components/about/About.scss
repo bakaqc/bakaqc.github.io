@@ -45,9 +45,7 @@
   padding: 0 1rem 0 0;
   margin-bottom: $mb-2-5;
 }
-.section__subtitle {
-  font-size: $normal-font-size;
-}
+
 @media screen and (max-width: 992px) {
   .about__container {
     grid-template-columns: 1fr;
