@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import "./Skills.scss";
 import Loading from "../common/Loading";
 
