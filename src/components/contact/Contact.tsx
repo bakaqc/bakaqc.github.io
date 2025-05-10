@@ -54,11 +54,11 @@ const Contact = () => {
 
                 <h3 className="contact__card__title">Email</h3>
                 <span className="contact__card-data">
-                  quocchuong3k@gmail.com
+                  quocchuong2609@gmail.com
                 </span>
 
                 <a
-                  href="mailto:quocchuong3k@gmail.com.com"
+                  href="mailto:quocchuong2609@gmail.com.com"
                   className="contact__button"
                   target="_blank"
                 >
@@ -71,7 +71,7 @@ const Contact = () => {
                 <i className="bx bxs-phone-call contact__card-icon"></i>
 
                 <h3 className="contact__card__title">Telephone</h3>
-                <span className="contact__card-data">076 370 7144</span>
+                <span className="contact__card-data">036 347 5716</span>
               </div>
 
               <div className="contact__card">
