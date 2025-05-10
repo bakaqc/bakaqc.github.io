@@ -1,5 +1,5 @@
 import AboutImg from "../../assets/info/baka.jpg";
-import CV from "../../assets/info/QuocChuongCV.pdf";
+import CV from "../../assets/info/Quoc_Chuong_Backend_Developer_CV.pdf";
 import file from "../../assets/action/files.svg";
 import Info from "./Info";
 import "./About.scss";
@@ -18,10 +18,11 @@ const About = () => {
             <Info />
 
             <p className="about__description">
-              I am a Backend Developer specializing in Java, adept at crafting
-              robust server-side solutions. Passionate about solving intricate
-              technical challenges, I am committed to delivering high-quality
-              software solutions that meet user needs effectively.
+              I aspire to be a skilled Backend Developer, mastering technical
+              foundations and contributing to business goals. Seeking a
+              growth-oriented environment to enhance my system design and
+              problem-solving skills, with a long-term goal of building scalable
+              and reliable backend systems.
             </p>
 
             <a download="" href={CV} className="button button--flex">
