@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect } from "react";
-import { ProjectsData , ProjectsNav} from "./Data";
+import { ProjectsData, ProjectsNav } from "../../../data/projects.json";
 import Loading from "../common/Loading";
 
 const ProjectItem = React.lazy(() => import("./ProjectItem"));
@@ -15,6 +15,7 @@ const Project = () => {
       github: string;
       description: string;
       role: string;
+      teamSize: number;
     }[]
   >([]);
   const [active, setActive] = React.useState(0);
@@ -71,6 +72,7 @@ const Project = () => {
                 github: string;
                 description: string;
                 role: string;
+                teamSize: number;
               }) => {
                 return <ProjectItem key={item.id} item={item} />;
               }

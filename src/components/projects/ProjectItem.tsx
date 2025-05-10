@@ -8,6 +8,7 @@ interface ProjectItemProps {
     github: string;
     description: string;
     role: string;
+    teamSize: number;
   };
 }
 
@@ -37,9 +38,13 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ item }) => {
         <p ref={descriptionRef} className="project__description">
           {item.description}
         </p>
+        <p className="project__team">
+          Team Size:
+          <span className="project__team-size"> {item.teamSize}</span>
+        </p>
         <p className="project__role">
           Role:
-          <span className="project__role-title">{' '}{item.role}</span>
+          <span className="project__role-title"> {item.role}</span>
         </p>
 
         <a href={item.github} className="project__button" target="_blank">

@@ -28,8 +28,8 @@
 }
 
 .project__container {
-  grid-template-columns: repeat(2, max-content);
-  gap: 3rem;
+  grid-template-columns: repeat(3, max-content);
+  gap: 2rem;
   justify-content: center;
 }
 
@@ -78,7 +78,7 @@
 .project__description {
   max-width: 295px;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin-bottom: $mb-0-75;
@@ -90,8 +90,17 @@
   display: block;
 }
 
+.project__team {
+  margin-bottom: $mb-1;
+}
+
 .project__role {
   margin-bottom: $mb-1;
+}
+
+.project__team-size{
+  font-weight: $font-medium;
+  color: $title-color;
 }
 
 .project__role-title{

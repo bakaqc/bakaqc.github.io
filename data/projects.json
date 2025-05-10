@@ -1,0 +1,78 @@
+{
+  "ProjectsData": [
+    {
+      "id": 1,
+      "image": "../src/assets/images/projects/lovepik.png",
+      "title": "LovePik",
+      "category": "Web",
+      "github": "https://github.com/bakaqc/flower",
+      "description": "An e-commerce site allowing users to browse and purchase flower-related products.",
+      "role": "Team Leader, Backend Developer",
+      "teamSize": 4
+    },
+    {
+      "id": 2,
+      "image": "../src/assets/images/projects/saledock.png",
+      "title": "SaleDock",
+      "category": "Web",
+      "github": "https://github.com/hardingadonis/saledock",
+      "description": "ERP module for managing products, customers, and orders to streamline sales operations. Handled fullstack implementation of core sales features",
+      "role": "Fullstack Developer",
+      "teamSize": 6
+    },
+    {
+      "id": 3,
+      "image": "../src/assets/images/projects/sponi.png",
+      "title": "sponi",
+      "category": "App",
+      "github": "https://github.com/bakaqc/sponi",
+      "description": "A personal finance management app designed to help users track expenses, set budgets, and achieve financial goals.",
+      "role": "Backend Developer",
+      "teamSize": 4
+    },
+    {
+      "id": 4,
+      "image": "../src/assets/images/projects/zynema.png",
+      "title": "Zynema",
+      "category": "App",
+      "github": "https://github.com/lzaycoe/zynema",
+      "description": "Movie app for Android that helps users discover movies, TV shows, and celebrity information.",
+      "role": "Backend Developer",
+      "teamSize": 6
+    },
+    {
+      "id": 5,
+      "image": "../src/assets/images/projects/ligevan.png",
+      "title": "ligevan",
+      "category": "Web",
+      "github": "https://github.com/hardingadonis/ligevan",
+      "description": "Built a web application for managing teachers, students, classes, attendance, schedules, and payments across multiple language centers.",
+      "role": "Backend Developer",
+      "teamSize": 6
+    },
+    {
+      "id": 6,
+      "image": "../src/assets/images/projects/brainbox.png",
+      "title": "BrainBox",
+      "category": "Web",
+      "github": "https://github.com/lzaycoe/brainbox-backend",
+      "description": "Developed a scalable e-learning platform supporting paid courses, instructor dashboards, AI chatbot support, real-time chat, and admin management.",
+      "role": "Team Leader, Backend Developer",
+      "teamSize": 6
+    }
+  ],
+  "ProjectsNav": [
+    {
+      "id": 1,
+      "name": "All"
+    },
+    {
+      "id": 2,
+      "name": "Web"
+    },
+    {
+      "id": 3,
+      "name": "App"
+    }
+  ]
+}
