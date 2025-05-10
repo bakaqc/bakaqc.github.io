@@ -2,7 +2,7 @@
   "ProjectsData": [
     {
       "id": 1,
-      "image": "../public/projects/lovepik.png",
+      "image": "projects/lovepik.png",
       "title": "LovePik",
       "category": "Web",
       "github": "https://github.com/bakaqc/flower",
@@ -12,7 +12,7 @@
     },
     {
       "id": 2,
-      "image": "../public/projects/saledock.png",
+      "image": "projects/saledock.png",
       "title": "SaleDock",
       "category": "Web",
       "github": "https://github.com/hardingadonis/saledock",
@@ -22,7 +22,7 @@
     },
     {
       "id": 3,
-      "image": "../public/projects/sponi.png",
+      "image": "projects/sponi.png",
       "title": "sponi",
       "category": "App",
       "github": "https://github.com/bakaqc/sponi",
@@ -32,7 +32,7 @@
     },
     {
       "id": 4,
-      "image": "../public/projects/zynema.png",
+      "image": "projects/zynema.png",
       "title": "Zynema",
       "category": "App",
       "github": "https://github.com/lzaycoe/zynema",
@@ -42,7 +42,7 @@
     },
     {
       "id": 5,
-      "image": "../public/projects/ligevan.png",
+      "image": "projects/ligevan.png",
       "title": "ligevan",
       "category": "Web",
       "github": "https://github.com/hardingadonis/ligevan",
@@ -52,7 +52,7 @@
     },
     {
       "id": 6,
-      "image": "../public/projects/brainbox.png",
+      "image": "projects/brainbox.png",
       "title": "BrainBox",
       "category": "Web",
       "github": "https://github.com/lzaycoe/brainbox-backend",
