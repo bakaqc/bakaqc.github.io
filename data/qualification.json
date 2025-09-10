@@ -1,0 +1,48 @@
+{
+  "education": [
+    {
+      "id": 1,
+      "title": "Junior High School Student",
+      "subtitle": "Nhon Phuc Secondary School",
+      "period": "2014 - 2018",
+      "position": "left"
+    },
+    {
+      "id": 2,
+      "title": "Secondary School Student",
+      "subtitle": "An Nhon No. 1 High School",
+      "period": "2018 - 2021",
+      "position": "right"
+    },
+    {
+      "id": 3,
+      "title": "Student",
+      "subtitle": "FPT Quy Nhon AI Campus",
+      "period": "2021 - 2025",
+      "position": "left"
+    }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "title": "Student Experience",
+      "subtitle": "FPT SOFTWARE QUY NHON",
+      "period": "May - December, 2023",
+      "position": "left"
+    },
+    {
+      "id": 2,
+      "title": "Intern Tester",
+      "subtitle": "FPT SOFTWARE QUY NHON",
+      "period": "April - August, 2024",
+      "position": "right"
+    },
+    {
+      "id": 3,
+      "title": "Backend Developer",
+      "subtitle": "PAXU at MMS Software (JOB REMOTE & PART-TIME)",
+      "period": "Jun – July, 2025",
+      "position": "left"
+    }
+  ]
+}

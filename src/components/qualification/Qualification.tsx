@@ -1,11 +1,65 @@
 import { useState } from "react";
 import "./Qualification.scss";
+import qualificationData from "../../../data/qualification.json";
+
+interface QualificationItem {
+  id: number;
+  title: string;
+  subtitle: string;
+  period: string;
+  position: "left" | "right";
+}
 
 const Qualification = () => {
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (index: number) => {
     setToggleState(index);
+  };
+
+  const renderQualificationData = (data: QualificationItem[]) => {
+    // Đảo ngược mảng để hiển thị thời gian gần nhất trước
+    const reversedData = [...data].reverse();
+
+    return reversedData.map((item, index) => {
+      // Xác định position dựa trên index để tạo layout xen kẽ
+      const isLeft = index % 2 === 0;
+
+      return (
+        <div key={item.id} className="qualification__data">
+          {isLeft ? (
+            <div>
+              <h3 className="qualification__title">{item.title}</h3>
+              <span className="qualification__subtitle">{item.subtitle}</span>
+              <div className="qualification__calender">
+                <i className="uil uil-calendar-alt"></i> {item.period}
+              </div>
+            </div>
+          ) : (
+            <div></div>
+          )}
+
+          <div>
+            <span className="qualification__rounder"></span>
+            {index !== reversedData.length - 1 && (
+              <span className="qualification__line"></span>
+            )}
+          </div>
+
+          {!isLeft ? (
+            <div>
+              <h3 className="qualification__title">{item.title}</h3>
+              <span className="qualification__subtitle">{item.subtitle}</span>
+              <div className="qualification__calender">
+                <i className="uil uil-calendar-alt"></i> {item.period}
+              </div>
+            </div>
+          ) : (
+            <div></div>
+          )}
+        </div>
+      );
+    });
   };
   return (
     <>
@@ -48,62 +102,9 @@ const Qualification = () => {
                   : "qualification__content"
               }
             >
-              <div className="qualification__data">
-                <div>
-                  <h3 className="qualification__title">Student</h3>
-                  <span className="qualification__subtitle">
-                    FPT Quy Nhon AI Campus
-                  </span>
-                  <div className="qualification__calender">
-                    <i className="uil uil-calendar-alt"></i> 2021 - Present
-                  </div>
-                </div>
-
-                <div>
-                  <span className="qualification__rounder"></span>
-                  <span className="qualification__line"></span>
-                </div>
-              </div>
-
-              <div className="qualification__data">
-                <div></div>
-
-                <div>
-                  <span className="qualification__rounder"></span>
-                  <span className="qualification__line"></span>
-                </div>
-
-                <div>
-                  <h3 className="qualification__title">
-                    Secondary School Student
-                  </h3>
-                  <span className="qualification__subtitle">
-                    An Nhon No. 1 High School
-                  </span>
-                  <div className="qualification__calender">
-                    <i className="uil uil-calendar-alt"></i> 2018 - 2021
-                  </div>
-                </div>
-              </div>
-
-              <div className="qualification__data">
-                <div>
-                  <h3 className="qualification__title">
-                    Junior High School Student
-                  </h3>
-                  <span className="qualification__subtitle">
-                    Nhon Phuc Secondary School
-                  </span>
-                  <div className="qualification__calender">
-                    <i className="uil uil-calendar-alt"></i> 2014 - 2018
-                  </div>
-                </div>
-
-                <div>
-                  <span className="qualification__rounder"></span>
-                  <span className="qualification__line"></span>
-                </div>
-              </div>
+              {renderQualificationData(
+                qualificationData.education as QualificationItem[]
+              )}
             </div>
 
             <div
@@ -113,41 +114,9 @@ const Qualification = () => {
                   : "qualification__content"
               }
             >
-              <div className="qualification__data">
-                <div>
-                  <h3 className="qualification__title">Intern Tester</h3>
-                  <span className="qualification__subtitle">
-                    FPT SOFTWARE QUY NHON
-                  </span>
-                  <div className="qualification__calender">
-                    <i className="uil uil-calendar-alt"></i> April 2024 -
-                    August 2024
-                  </div>
-                </div>
-
-                <div>
-                  <span className="qualification__rounder"></span>
-                  <span className="qualification__line"></span>
-                </div>
-              </div>
-
-              <div className="qualification__data">
-                <div></div>
-                <div>
-                  <span className="qualification__rounder"></span>
-                  <span className="qualification__line"></span>
-                </div>
-
-                <div>
-                  <h3 className="qualification__title">Student Experience</h3>
-                  <span className="qualification__subtitle">
-                    FPT SOFTWARE QUY NHON
-                  </span>
-                  <div className="qualification__calender">
-                    <i className="uil uil-calendar-alt"></i> May - December 2023
-                  </div>
-                </div>
-              </div>
+              {renderQualificationData(
+                qualificationData.experience as QualificationItem[]
+              )}
             </div>
           </div>
         </div>

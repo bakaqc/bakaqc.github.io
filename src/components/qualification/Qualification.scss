@@ -62,6 +62,9 @@
   display: inline-block;
   font-size: $small-font-size;
   margin-bottom: $mb-1;
+  max-width: 200px;
+  word-wrap: break-word;
+  line-height: 1.4;
 }
 
 .qualification__calender {
@@ -104,9 +107,18 @@
   .qualification__button {
     margin: 0 $mb-0-75;
   }
+
+  .qualification__subtitle {
+    max-width: 150px;
+  }
 }
 @media screen and (max-width: 350px) {
   .qualification__data {
     gap: 0.5rem;
+  }
+
+  .qualification__subtitle {
+    max-width: 120px;
+    font-size: 0.75rem;
   }
 }
