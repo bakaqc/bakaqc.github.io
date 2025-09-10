@@ -9,7 +9,7 @@ export const ContributorsData = [
     avatar: Vuong,
     position: "Backend Developer",
     description:
-      "I'm a student at FPT University Quy Nhon. I’m currently learning Java Backend.",
+      "I'm a student at FPT University Quy Nhon. I’m currently learning Backend.",
     github: "https://github.com/hardingadonis",
   },
   {
@@ -25,9 +25,9 @@ export const ContributorsData = [
     id: 3,
     name: "Ho Trong Nghia",
     avatar: Nghia,
-    position: "Tester",
+    position: "Frontend Developer",
     description:
-      "I'm a student at FPT University Quy Nhon. I’m currently learning Tester.",
+      "I'm a student at FPT University Quy Nhon. I’m currently learning Frontend Development.",
     github: "https://github.com/htnghia1423",
   },
 ];
