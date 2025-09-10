@@ -59,6 +59,26 @@
       "description": "Developed a scalable e-learning platform supporting paid courses, instructor dashboards, AI chatbot support, real-time chat, and admin management.",
       "role": "Team Leader, Backend Developer",
       "teamSize": 6
+    },
+    {
+      "id": 7,
+      "image": "projects/paxu.png",
+      "title": "Paxu",
+      "category": "App",
+      "github": "https://play.google.com/store/apps/details?id=com.fla_paxu_pals&hl=vi",
+      "description": "Developed PAXU, a personal finance app for spending management, loan capacity calculation, fee estimation, and living cost comparison. Built backend with NodeJS, Express, MongoDB, Parse Server and led major migrations (Parse 2.8→8.2.1, MongoDB v4→v6) while collaborating with a remote team.",
+      "role": "Backend Developer",
+      "teamSize": 7
+    },
+    {
+      "id": 8,
+      "image": "projects/thesync.png",
+      "title": "TheSync",
+      "category": "Web",
+      "github": "https://github.com/5-logic",
+      "description": "Application to Support Group Formation and Capstone Thesis Development for Information Technology Students at FPT University",
+      "role": "Team Leader, Backend Developer",
+      "teamSize": 5
     }
   ],
   "ProjectsNav": [

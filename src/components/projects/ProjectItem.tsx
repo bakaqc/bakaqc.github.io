@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 interface ProjectItemProps {
   item: {
@@ -14,30 +14,44 @@ interface ProjectItemProps {
 
 const ProjectItem: React.FC<ProjectItemProps> = ({ item }) => {
   const descriptionRef = useRef<HTMLParagraphElement>(null);
+  const [isTextClamped, setIsTextClamped] = useState(false);
 
   useEffect(() => {
-    if (descriptionRef.current) {
-      const description = descriptionRef.current;
-      const lineHeight = parseInt(
-        window.getComputedStyle(description).getPropertyValue("line-height")
-      );
-      const height = description.clientHeight;
-      const lines = Math.floor(height / lineHeight);
+    const checkTextClamping = () => {
+      if (descriptionRef.current) {
+        const element = descriptionRef.current;
+        // Check if text is actually truncated by comparing scroll height with client height
+        const isClamped = element.scrollHeight > element.clientHeight;
+        setIsTextClamped(isClamped);
 
-      if (lines > 2) {
-        description.classList.add("clamped");
+        if (isClamped) {
+          element.classList.add("clamped");
+        }
       }
-    }
-  }, []);
+    };
+
+    // Check after component mounts and fonts are loaded
+    checkTextClamping();
+
+    // Also check after fonts are loaded (in case they affect the layout)
+    document.fonts.ready.then(() => {
+      checkTextClamping();
+    });
+  }, [item.description]);
 
   return (
     <>
       <div className="project__card" key={item.id}>
         <img src={item.image} alt={item.title} className="project__img" />
         <h3 className="project__title">{item.title}</h3>
-        <p ref={descriptionRef} className="project__description">
-          {item.description}
-        </p>
+        <div className="project__description-container">
+          <p ref={descriptionRef} className="project__description">
+            {item.description}
+          </p>
+          {isTextClamped && (
+            <div className="project__tooltip">{item.description}</div>
+          )}
+        </div>
         <p className="project__team">
           Team Size:
           <span className="project__team-size"> {item.teamSize}</span>

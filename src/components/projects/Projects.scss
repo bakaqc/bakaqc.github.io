@@ -38,6 +38,13 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 1.25rem;
   border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.project__card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .project__img {
@@ -75,19 +82,61 @@
   color: $topic-color;
 }
 
+.project__description-container {
+  position: relative;
+  margin-bottom: $mb-0-75;
+}
+
 .project__description {
   max-width: 295px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  margin-bottom: $mb-0-75;
-  position: relative;
+  cursor: pointer;
+  margin: 0;
 }
 
 .project__description.clamped::after {
   content: "\A0";
   display: block;
+}
+
+.project__tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: $small-font-size;
+  max-width: 350px;
+  width: max-content;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.project__tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.9);
+}
+
+.project__description-container:hover .project__tooltip {
+  opacity: 1;
+  visibility: visible;
 }
 
 .project__team {
@@ -142,6 +191,15 @@
   .project__img {
     width: 100%;
   }
+
+  .project__tooltip {
+    max-width: 280px;
+    font-size: 0.75rem;
+  }
+
+  .project__description {
+    max-width: 100%;
+  }
 }
 @media screen and (max-width: 350px) {
   .project__item {
@@ -154,5 +212,11 @@
 
   .project__img {
     height: 170px;
+  }
+
+  .project__tooltip {
+    max-width: 250px;
+    font-size: 0.7rem;
+    padding: 0.5rem;
   }
 }
