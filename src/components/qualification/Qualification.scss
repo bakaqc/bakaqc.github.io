@@ -1,7 +1,7 @@
-@import "../../setup.scss";
+@use "../../setup.scss" as *;
 
-.qualification{
-    margin-top: 6rem;
+.qualification {
+  margin-top: 6rem;
 }
 .qualification__container {
   max-width: 768px;
@@ -91,22 +91,22 @@
   }
 }
 @media screen and (max-width: 768px) {
-    .qualification__container {
-        margin-left: $mb-1-5;
-        margin-right: $mb-1-5;
-      }
+  .qualification__container {
+    margin-left: $mb-1-5;
+    margin-right: $mb-1-5;
+  }
 }
 @media screen and (max-width: 576px) {
-    .qualification__section{
-        grid-template-columns: initial;
-    }
+  .qualification__section {
+    grid-template-columns: initial;
+  }
 
-    .qualification__button{
-        margin: 0 $mb-0-75;
-    }
+  .qualification__button {
+    margin: 0 $mb-0-75;
+  }
 }
 @media screen and (max-width: 350px) {
-    .qualification__data{
-        gap: 0.5rem;
-    }
+  .qualification__data {
+    gap: 0.5rem;
+  }
 }

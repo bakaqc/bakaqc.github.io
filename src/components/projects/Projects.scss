@@ -1,4 +1,4 @@
-@import "../../setup.scss";
+@use "../../setup.scss" as *;
 
 .projects {
   margin-top: 6rem;
@@ -98,12 +98,12 @@
   margin-bottom: $mb-1;
 }
 
-.project__team-size{
+.project__team-size {
   font-weight: $font-medium;
   color: $title-color;
 }
 
-.project__role-title{
+.project__role-title {
   font-weight: $font-medium;
   color: $title-color;
 }

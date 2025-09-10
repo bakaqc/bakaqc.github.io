@@ -1,4 +1,4 @@
-@import "../../setup.scss";
+@use "../../setup.scss" as *;
 
 .contact {
   margin-top: 6rem;
@@ -133,24 +133,24 @@
 }
 
 .contact__form-action {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .message {
-    margin-left: 1rem;
+  margin-left: 1rem;
 
-    &.success {
-        color: green;
-    }
+  &.success {
+    color: green;
+  }
 
-    &.failed {
-        color: red;
-    }
+  &.failed {
+    color: red;
+  }
 }
 
 .message__icon {
-    font-size: 1.5rem; 
+  font-size: 1.5rem;
 }
 
 @media screen and (max-width: 576px) {
@@ -163,10 +163,6 @@
   }
 
   .message__icon {
-    font-size: 1rem; 
+    font-size: 1rem;
+  }
 }
-}
-
-
-
-

@@ -1,4 +1,4 @@
-@import "../../setup.scss";
+@use "../../setup.scss" as *;
 
 .scrollup {
   position: fixed;

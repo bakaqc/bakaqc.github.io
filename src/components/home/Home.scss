@@ -1,4 +1,4 @@
-@import "../../setup.scss";
+@use "../../setup.scss" as *;
 
 .home__container {
   row-gap: 7rem;
@@ -35,7 +35,7 @@
 .home__social-icon img {
   border-radius: 0.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: none; 
+  border: none;
 }
 
 .home__social-icon:hover img {

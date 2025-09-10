@@ -1,4 +1,4 @@
-@import '../../setup.scss';
+@use "../../setup.scss" as *;
 
 .about__container {
   grid-template-columns: repeat(2, 1fr);
