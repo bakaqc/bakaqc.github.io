@@ -13,7 +13,7 @@ const Data = () => {
         <p className="home__description">
           🎓 I'm a student at FPT University Quy Nhon.
           <br />
-          🔭 I’m currently learning Java, React, NodeJS.
+          🔭 I’m currently learning Backend NodeJS.
         </p>
 
         <div className="button__container">
