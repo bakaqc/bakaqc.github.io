@@ -2,49 +2,39 @@
 
 .scrollup {
   position: fixed;
-  right: 2.5rem;
-  bottom: -20%;
-  background-color: $text-color;
-  opacity: 0.8;
-  padding: 0.2rem 0.4rem;
-  border-radius: 0.4rem;
+  right: 1.75rem;
+  bottom: -3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: $ink;
+  color: $bg;
+  box-shadow: $shadow-md;
   z-index: $z-tooltip;
-  transition: 0.3s;
-}
+  transition: bottom 0.3s ease, transform 0.2s ease, background-color 0.2s ease;
 
-.scrollup:hover {
-  background-color: $title-color;
-  color: $container-color;
-  cursor: pointer;
+  &:hover {
+    background: $accent;
+    transform: translateY(-3px);
+    cursor: pointer;
+  }
 }
 
 .scrollup__icon {
-  font-size: 2rem;
-  color: $body-color;
+  font-size: 1.25rem;
 }
 
 .show-scroll {
-  bottom: 3rem;
+  bottom: 1.75rem;
 }
 
 @media screen and (max-width: 992px) {
-  .scrollup {
-    right: 1.5rem;
-    padding: 0.1rem 0.3rem;
-  }
-
-  .scrollup__icon {
-    font-size: 1.5rem;
-  }
+  .scrollup { right: 1.25rem; }
 }
+
 @media screen and (max-width: 768px) {
-  .show-scroll {
-    bottom: 4rem;
-  }
-}
-
-@media screen and (max-width: 350px) {
-  .scrollup {
-    right: 1rem;
-  }
+  .show-scroll { bottom: 5rem; }
 }
