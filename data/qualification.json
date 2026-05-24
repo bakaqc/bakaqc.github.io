@@ -2,47 +2,35 @@
   "education": [
     {
       "id": 1,
-      "title": "Junior High School Student",
-      "subtitle": "Nhon Phuc Secondary School",
-      "period": "2014 - 2018",
-      "position": "left"
-    },
-    {
-      "id": 2,
-      "title": "Secondary School Student",
-      "subtitle": "An Nhon No. 1 High School",
-      "period": "2018 - 2021",
-      "position": "right"
-    },
-    {
-      "id": 3,
-      "title": "Student",
-      "subtitle": "FPT Quy Nhon AI Campus",
-      "period": "2021 - 2025",
-      "position": "left"
-    }
-  ],
-  "experience": [
-    {
-      "id": 1,
-      "title": "Student Experience",
-      "subtitle": "FPT SOFTWARE QUY NHON",
-      "period": "May - December, 2023",
-      "position": "left"
-    },
-    {
-      "id": 2,
-      "title": "Intern Tester",
-      "subtitle": "FPT SOFTWARE QUY NHON",
-      "period": "April - August, 2024",
-      "position": "right"
-    },
-    {
-      "id": 3,
-      "title": "Backend Developer",
-      "subtitle": "PAXU at MMS Software (JOB REMOTE & PART-TIME)",
-      "period": "Jun – July, 2025",
-      "position": "left"
+      "degree": "Bachelor of Software Engineering",
+      "institution": "FPT University",
+      "campus": "Quy Nhon AI Campus",
+      "period": "2021 — Nov 2025",
+      "location": "Quy Nhon, Vietnam",
+      "status": "Graduated",
+      "tagline": "Four years building real systems while studying the theory behind them.",
+      "focus": [
+        "Software Architecture",
+        "Distributed Systems",
+        "Database Engineering",
+        "AI & Machine Learning",
+        "Secure Coding",
+        "Agile Delivery"
+      ],
+      "achievements": [
+        {
+          "label": "Capstone",
+          "value": "Graduation project shipped to production review"
+        },
+        {
+          "label": "Hands-on",
+          "value": "On-site FPT Software student experience program"
+        },
+        {
+          "label": "Internship",
+          "value": "CMS Migration Engineer at FPT Software Quy Nhon"
+        }
+      ]
     }
   ]
 }

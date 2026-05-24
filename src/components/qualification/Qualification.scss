@@ -1,124 +1,470 @@
+@use "sass:color";
 @use "../../setup.scss" as *;
 
-.qualification {
-  margin-top: 6rem;
-}
-.qualification__container {
-  max-width: 768px;
+.qualification__stack {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1.5rem;
 }
 
-.qualification__tabs {
+// === Card shell — diploma feel ===
+.edu-card {
+  position: relative;
+  background: linear-gradient(
+      135deg,
+      rgba(255, 87, 34, 0.04) 0%,
+      rgba(255, 255, 255, 0) 35%,
+      rgba(255, 255, 255, 0) 65%,
+      rgba(10, 10, 10, 0.03) 100%
+    ),
+    $bg-elevated;
+  border: 1px solid $border;
+  border-radius: 24px;
+  padding: 2.25rem;
+  overflow: hidden;
+  isolation: isolate;
+  transition: border-color 0.25s ease, transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px dashed rgba(10, 10, 10, 0.08);
+    border-radius: 18px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &:hover {
+    border-color: $ink;
+    transform: translateY(-3px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+// Ornamental corner ticks
+.edu-card__ornament {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.edu-card__corner {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 2px solid $accent;
+
+  &--tl {
+    top: 18px;
+    left: 18px;
+    border-right: 0;
+    border-bottom: 0;
+    border-top-left-radius: 6px;
+  }
+  &--tr {
+    top: 18px;
+    right: 18px;
+    border-left: 0;
+    border-bottom: 0;
+    border-top-right-radius: 6px;
+  }
+  &--bl {
+    bottom: 18px;
+    left: 18px;
+    border-right: 0;
+    border-top: 0;
+    border-bottom-left-radius: 6px;
+  }
+  &--br {
+    bottom: 18px;
+    right: 18px;
+    border-left: 0;
+    border-top: 0;
+    border-bottom-right-radius: 6px;
+  }
+}
+
+// === Inner layout ===
+.edu-card__inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+// === Seal (spinning diploma stamp) ===
+.edu-card__seal {
   display: flex;
-  justify-content: center;
-  margin-bottom: $mb-3;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding-top: 0.5rem;
 }
 
-.qualification__button {
-  font-size: $h3-font-size;
-  font-weight: $font-medium;
-  color: $title-color;
-  margin: 0 $mb-1;
-  cursor: pointer;
-}
-
-.qualification__button:hover {
-  color: $topic-color;
-}
-
-.qualification__icon {
-  font-size: 1.8rem;
-  margin-right: $mb-0-25;
-}
-
-.qualification__active {
-  color: $topic-color;
-}
-
-.qualification__section {
+.edu-card__seal-ring {
+  position: relative;
+  width: 200px;
+  height: 200px;
   display: grid;
-  justify-content: center;
+  place-items: center;
 }
 
-.qualification__content {
-  display: none;
-}
-
-.qualification__content-active {
-  display: block;
-}
-
-.qualification__data {
-  display: grid;
-  grid-template-columns: 1fr max-content 1fr;
-  column-gap: 1.5rem;
-}
-
-.qualification__title {
-  font-size: $normal-font-size;
-  font-weight: $font-medium;
-}
-
-.qualification__subtitle {
-  display: inline-block;
-  font-size: $small-font-size;
-  margin-bottom: $mb-1;
-  max-width: 200px;
-  word-wrap: break-word;
-  line-height: 1.4;
-}
-
-.qualification__calender {
-  font-size: $small-font-size;
-}
-
-.qualification__rounder {
-  display: inline-block;
-  width: 13px;
-  height: 13px;
-  background-color: $topic-color;
-  border-radius: 50%;
-}
-
-.qualification__line {
-  display: block;
-  width: 1px;
+.edu-card__seal-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
   height: 100%;
-  background-color: $topic-color;
-  transform: translate(6px, -7px);
+  animation: edu-spin 24s linear infinite;
 }
 
-@media screen and (max-width: 992px) {
-  .qualification__container {
-    margin-left: auto;
-    margin-right: auto;
+@keyframes edu-spin {
+  to {
+    transform: rotate(360deg);
   }
 }
-@media screen and (max-width: 768px) {
-  .qualification__container {
-    margin-left: $mb-1-5;
-    margin-right: $mb-1-5;
+
+.edu-card__seal-text {
+  font-family: $mono-font;
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  font-weight: $font-semi-bold;
+  fill: $ink-soft;
+  text-transform: uppercase;
+}
+
+.edu-card__seal-core {
+  position: absolute;
+  width: 124px;
+  height: 124px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 25%,
+    color.adjust($accent, $lightness: 12%),
+    $accent 65%,
+    $accent-ink 100%
+  );
+  color: $bg;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  box-shadow: 0 14px 32px rgba(255, 87, 34, 0.35),
+    inset 0 0 0 4px rgba(255, 255, 255, 0.15);
+
+  i {
+    font-size: 2.6rem;
+    line-height: 1;
+  }
+
+  span {
+    font-family: $display-font;
+    font-weight: $font-extra-bold;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
   }
 }
+
+.edu-card__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: $radius-pill;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #15803d;
+  font-family: $mono-font;
+  font-size: $smaller-font-size;
+  font-weight: $font-semi-bold;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.edu-card__status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
+}
+
+// === Body / right column ===
+.edu-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  min-width: 0;
+}
+
+.edu-card__head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.edu-card__kicker {
+  font-family: $mono-font;
+  font-size: $tiny-font-size;
+  font-weight: $font-bold;
+  color: $accent;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.edu-card__degree {
+  font-family: $display-font;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-weight: $font-extra-bold;
+  color: $ink;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+.edu-card__institution {
+  font-size: 1.05rem;
+  color: $ink-soft;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+
+  strong {
+    color: $ink;
+    font-weight: $font-bold;
+  }
+}
+
+.edu-card__dot-sep {
+  color: $ink-muted;
+}
+
+.edu-card__tagline {
+  font-size: $normal-font-size;
+  color: $ink-soft;
+  font-style: italic;
+  line-height: 1.55;
+  margin-top: 0.25rem;
+  padding-left: 0.85rem;
+  border-left: 2px solid $accent;
+}
+
+.edu-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.edu-card__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: $radius-pill;
+  background: $bg-muted;
+  border: 1px solid $border;
+  font-family: $mono-font;
+  font-size: $smaller-font-size;
+  color: $ink-soft;
+  font-weight: $font-medium;
+
+  i {
+    font-size: 0.95rem;
+    color: $accent;
+  }
+}
+
+.edu-card__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.edu-card__section-label {
+  font-family: $mono-font;
+  font-size: $tiny-font-size;
+  font-weight: $font-bold;
+  color: $ink-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      $border 0%,
+      transparent 100%
+    );
+  }
+}
+
+// Focus tags
+.edu-card__focus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.edu-card__focus-tag {
+  padding: 0.4rem 0.85rem;
+  border-radius: $radius-sm;
+  background: $bg;
+  border: 1px solid $border;
+  font-size: $smaller-font-size;
+  font-weight: $font-medium;
+  color: $ink;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: $accent-soft;
+    border-color: $accent;
+    color: $accent-ink;
+    transform: translateY(-1px);
+  }
+}
+
+// Milestones
+.edu-card__milestones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.7rem;
+}
+
+.edu-card__milestone {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.9rem 1rem;
+  border-radius: $radius-md;
+  background: $bg;
+  border: 1px solid $border;
+  border-left: 3px solid $accent;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: $border-strong;
+    border-left-color: $accent;
+    transform: translateX(2px);
+  }
+}
+
+.edu-card__milestone-label {
+  font-family: $mono-font;
+  font-size: $tiny-font-size;
+  font-weight: $font-bold;
+  color: $accent;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.edu-card__milestone-value {
+  font-size: $smaller-font-size;
+  color: $ink;
+  font-weight: $font-medium;
+  line-height: 1.45;
+}
+
+// === Responsive ===
+@media screen and (max-width: 900px) {
+  .edu-card {
+    padding: 1.75rem;
+  }
+
+  .edu-card__inner {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .edu-card__seal {
+    flex-direction: row;
+    gap: 1.5rem;
+    padding-top: 0;
+  }
+
+  .edu-card__seal-ring {
+    width: 140px;
+    height: 140px;
+    flex-shrink: 0;
+  }
+
+  .edu-card__seal-core {
+    width: 86px;
+    height: 86px;
+
+    i {
+      font-size: 1.8rem;
+    }
+    span {
+      font-size: 0.85rem;
+    }
+  }
+
+  .edu-card__seal-text {
+    font-size: 6.8px;
+  }
+}
+
 @media screen and (max-width: 576px) {
-  .qualification__section {
-    grid-template-columns: initial;
+  .edu-card {
+    padding: 1.4rem;
+    border-radius: 18px;
+
+    &::before {
+      inset: 8px;
+      border-radius: 14px;
+    }
   }
 
-  .qualification__button {
-    margin: 0 $mb-0-75;
+  .edu-card__corner {
+    width: 18px;
+    height: 18px;
+
+    &--tl,
+    &--tr {
+      top: 12px;
+    }
+    &--bl,
+    &--br {
+      bottom: 12px;
+    }
+    &--tl,
+    &--bl {
+      left: 12px;
+    }
+    &--tr,
+    &--br {
+      right: 12px;
+    }
   }
 
-  .qualification__subtitle {
-    max-width: 150px;
-  }
-}
-@media screen and (max-width: 350px) {
-  .qualification__data {
-    gap: 0.5rem;
+  .edu-card__seal {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .qualification__subtitle {
-    max-width: 120px;
-    font-size: 0.75rem;
+  .edu-card__seal-ring {
+    margin: 0 auto;
+  }
+
+  .edu-card__degree {
+    font-size: 1.4rem;
+  }
+
+  .edu-card__institution {
+    font-size: 0.95rem;
+  }
+
+  .edu-card__milestones {
+    grid-template-columns: 1fr;
   }
 }
