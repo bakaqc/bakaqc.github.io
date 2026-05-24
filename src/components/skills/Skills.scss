@@ -1,85 +1,128 @@
 @use "../../setup.scss" as *;
 
-.skills {
-  margin-top: 6rem;
-}
-
-.skills__container {
-  justify-content: center;
-  text-align: center;
-}
-
-.skills__container img {
-  margin: 10px 0;
-}
-
-.skills__content {
-  background-color: $container-color;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 2rem 4rem;
-  border-radius: 1.25rem;
-}
-.skills__title {
-  font-size: $h3-font-size;
-  font-weight: $font-semi-bold;
-  text-align: center;
-  margin-bottom: $mb-2;
-}
-
-.skills__box {
-  display: flex;
-  justify-content: center;
-  column-gap: 2.5rem;
-}
-
-.skills__group {
+.skill__grid {
   display: grid;
-  align-items: flex-start;
-  row-gap: 3rem;
-}
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
 
-.skills__data {
-  display: flex;
-  column-gap: 0.5rem;
-}
-
-.skills .bx {
-  font-size: 2.5rem;
-  color: $text-color;
-}
-
-.skills__name {
-  font-size: $normal-font-size;
-  font-weight: $font-medium;
-  line-height: 18px;
-}
-
-.skills__level {
-  font-size: $smaller-font-size;
-}
-
-@media screen and (max-width: 992px) {
-  .skills__container {
-    grid-template-columns: max-content;
-    row-gap: 2rem;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .skills__container {
+  &--primary {
     grid-template-columns: 1fr;
-  }
-
-  .skills__content {
-    padding: 1.2rem;
+    margin-bottom: 2rem;
   }
 }
-@media screen and (max-width: 350px) {
-  .skills__box {
-    column-gap: 1.25rem;
+
+.skill__card {
+  background: $bg-elevated;
+  border: 1px solid $border;
+  border-radius: $radius-lg;
+  padding: 1.85rem 1.85rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: all 0.25s ease;
+
+  &:hover {
+    border-color: $ink;
+    transform: translateY(-3px);
+    box-shadow: $shadow-md;
   }
 
-  .skills__name {
-    font-size: $smaller-font-size;
+  &--primary {
+    background: $ink;
+    border-color: $ink;
+    color: $bg;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle at top right,
+        rgba(255, 87, 34, 0.18),
+        transparent 55%
+      );
+      pointer-events: none;
+    }
+
+    .skill__label { color: $bg; }
+    .skill__caption { color: rgba(255, 255, 255, 0.7); }
+    .skill__pill {
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.9);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(10, 10, 10, 0.2);
+      border-color: $ink;
+    }
+  }
+}
+
+.skill__head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.skill__label {
+  font-family: $display-font;
+  font-size: 1.2rem;
+  font-weight: $font-extra-bold;
+  color: $ink;
+  letter-spacing: -0.025em;
+}
+
+.skill__caption {
+  font-size: $small-font-size;
+  color: $ink-muted;
+  line-height: 1.5;
+}
+
+.skill__icons {
+  max-height: 50px;
+  width: auto;
+  align-self: flex-start;
+  border-radius: $radius-sm;
+}
+
+.skill__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.skill__pill {
+  display: inline-flex;
+  align-items: center;
+  font-family: $mono-font;
+  font-size: $tiny-font-size;
+  letter-spacing: 0.02em;
+  font-weight: $font-medium;
+  color: $ink-soft;
+  padding: 0.32rem 0.65rem;
+  border-radius: $radius-sm;
+  background: $bg-muted;
+  border: 1px solid $border;
+  transition: all 0.15s ease;
+
+  &:hover {
+    background: $accent-soft;
+    color: $accent-ink;
+    border-color: rgba(255, 87, 34, 0.3);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .skill__card {
+    padding: 1.4rem 1.4rem 1.2rem;
+  }
+
+  .skill__icons {
+    max-height: 42px;
   }
 }
