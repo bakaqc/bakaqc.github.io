@@ -1,179 +1,178 @@
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import "./Contact.scss";
-import send from "../../assets/action/send.svg";
 import SyncLoader from "react-spinners/SyncLoader";
+import "./Contact.scss";
+
+type Status = "idle" | "loading" | "success" | "failed";
 
 const Contact = () => {
   const form = useRef<HTMLFormElement | null>(null);
-  const [message, setMessage] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!form.current) return;
+    setStatus("loading");
 
-    setIsLoading(true);
-
-    if (form.current) {
-      // Gửi email chính cho bạn
-      emailjs
-        .sendForm("service_g33a6gw", "template_hgjjyxb", form.current, {
-          publicKey: "9vsUN7poE5dhIXNXM",
-        })
-        .then((result) => {
-          // Gửi auto-reply cho người gửi
-          if (form.current) {
-            return emailjs.sendForm(
-              "service_g33a6gw",
-              "template_dl39x26",
-              form.current,
-              {
-                publicKey: "9vsUN7poE5dhIXNXM",
-              }
-            );
-          }
-          return result;
-        })
-        .then(() => {
-          (e.target as HTMLFormElement).reset();
-          setMessage("SUCCESS");
-          setIsLoading(false);
-
-          setTimeout(() => {
-            setMessage(null);
-          }, 4000);
-        })
-        .catch((error) => {
-          console.log("FAILED", error.text);
-          setMessage("FAILED");
-          setIsLoading(false);
-        });
-    }
+    emailjs
+      .sendForm("service_g33a6gw", "template_hgjjyxb", form.current, {
+        publicKey: "9vsUN7poE5dhIXNXM",
+      })
+      .then(() => {
+        if (form.current) {
+          return emailjs.sendForm(
+            "service_g33a6gw",
+            "template_dl39x26",
+            form.current,
+            { publicKey: "9vsUN7poE5dhIXNXM" }
+          );
+        }
+      })
+      .then(() => {
+        (e.target as HTMLFormElement).reset();
+        setStatus("success");
+        setTimeout(() => setStatus("idle"), 4000);
+      })
+      .catch(() => {
+        setStatus("failed");
+        setTimeout(() => setStatus("idle"), 4000);
+      });
   };
 
   return (
-    <>
-      <section className="contact section" id="contact">
-        <h2 className="section__title">Get In Touch</h2>
-        <span className="section__subtitle">Contact Me</span>
+    <section className="contact section" id="contact">
+      <div className="container">
+        <span className="section__eyebrow">Contact</span>
+        <h2 className="section__title">Let's talk.</h2>
+        <p className="section__subtitle">
+          Got a project, a question, or just want to say hi? Pick whichever
+          channel feels right — I usually reply within a day or two.
+        </p>
 
-        <div className="contact__container container grid">
-          <div className="contact__content">
-            <h3 className="contact__title">Talk to me</h3>
-
-            <div className="contact__info">
-              <div className="contact__card">
-                <i className="bx bx-mail-send contact__card-icon"></i>
-
-                <h3 className="contact__card__title">Email</h3>
-                <span className="contact__card-data">bakaqc.dev@gmail.com</span>
-
-                <a
-                  href="mailto:bakaqc.dev@gmail.com"
-                  className="contact__button"
-                  target="_blank"
-                >
-                  Write me{" "}
-                  <i className="bx bx-right-arrow-alt contact__button-icon"></i>
-                </a>
+        <div className="contact__grid">
+          <div className="contact__channels">
+            <a
+              className="contact__channel"
+              href="mailto:bakaqc.dev@gmail.com"
+            >
+              <i className="uil uil-envelope-alt"></i>
+              <div>
+                <span className="contact__channel-label">Email</span>
+                <span className="contact__channel-value">
+                  bakaqc.dev@gmail.com
+                </span>
               </div>
+              <i className="uil uil-arrow-up-right contact__channel-arrow"></i>
+            </a>
 
-              <div className="contact__card">
-                <i className="bx bxs-phone-call contact__card-icon"></i>
-
-                <h3 className="contact__card__title">Telephone</h3>
-                <span className="contact__card-data">036 347 5716</span>
+            <a
+              className="contact__channel"
+              href="tel:+84763707144"
+            >
+              <i className="uil uil-phone-volume"></i>
+              <div>
+                <span className="contact__channel-label">Phone</span>
+                <span className="contact__channel-value">076 370 7144</span>
               </div>
+              <i className="uil uil-arrow-up-right contact__channel-arrow"></i>
+            </a>
 
-              <div className="contact__card">
-                <i className="bx bxl-discord-alt contact__card-icon"></i>
-
-                <h3 className="contact__card__title">Discord</h3>
-                <span className="contact__card-data">Quoc Chuong - BaKa</span>
-
-                <a
-                  href="https://discord.gg/RRFQVqfJ"
-                  className="contact__button"
-                  target="_blank"
-                >
-                  Write me{" "}
-                  <i className="bx bx-right-arrow-alt contact__button-icon"></i>
-                </a>
+            <a
+              className="contact__channel"
+              href="https://discord.gg/RRFQVqfJ"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="uil uil-discord"></i>
+              <div>
+                <span className="contact__channel-label">Discord</span>
+                <span className="contact__channel-value">Quoc Chuong · BaKa</span>
               </div>
-            </div>
+              <i className="uil uil-arrow-up-right contact__channel-arrow"></i>
+            </a>
+
+            <a
+              className="contact__channel"
+              href="https://www.linkedin.com/in/bakaqc"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="uil uil-linkedin"></i>
+              <div>
+                <span className="contact__channel-label">LinkedIn</span>
+                <span className="contact__channel-value">linkedin.com/in/bakaqc</span>
+              </div>
+              <i className="uil uil-arrow-up-right contact__channel-arrow"></i>
+            </a>
           </div>
-          <div className="contact__content">
-            <h3 className="contact__title">Write me your project</h3>
 
-            <form ref={form} onSubmit={sendEmail} className="contact__form">
-              <div className="contact__form-div">
-                <label className="contact__form-tag">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  className="contact__form-input"
-                  placeholder="Enter your name"
-                  required
-                />
-              </div>
+          <form ref={form} onSubmit={sendEmail} className="contact__form">
+            <header className="contact__form-head">
+              <h3>Send a quick message</h3>
+              <p>Filled fields go straight to my inbox.</p>
+            </header>
 
-              <div className="contact__form-div">
-                <label className="contact__form-tag">Mail</label>
-                <input
-                  type="email"
-                  name="email"
-                  className="contact__form-input"
-                  placeholder="Enter your email"
-                  required
-                />
-              </div>
+            <label className="contact__field">
+              <span>Your name</span>
+              <input type="text" name="name" placeholder="Jane Doe" required />
+            </label>
 
-              <div className="contact__form-div contact__form-area">
-                <label className="contact__form-tag">Project Description</label>
-                <textarea
-                  name="project"
-                  className="contact__form-input"
-                  placeholder="Write your project description"
-                  required
-                ></textarea>
-              </div>
+            <label className="contact__field">
+              <span>Email</span>
+              <input
+                type="email"
+                name="email"
+                placeholder="jane@company.com"
+                required
+              />
+            </label>
 
-              <div className="contact__form-action">
-                <button type="submit" className="button button--flex">
-                  Send Message{" "}
-                  {isLoading ? (
-                    <SyncLoader
-                      color={"#29d9f6"}
-                      size={10}
-                      style={{ marginLeft: "0.5rem" }}
-                    />
-                  ) : (
-                    <img
-                      src={send}
-                      alt="Send"
-                      style={{ marginLeft: "0.3rem" }}
-                    />
-                  )}
-                </button>
+            <label className="contact__field">
+              <span>What's on your mind?</span>
+              <textarea
+                name="project"
+                placeholder="Short description of what you'd like to chat about…"
+                rows={5}
+                required
+              />
+            </label>
 
-                {message && (
-                  <h3 className={`message ${message.toLowerCase()}`}>
-                    {message === "SUCCESS"
-                      ? "Message sent successfully! Check your email for confirmation."
-                      : "Failed to send message. Please try again."}
-                    {message === "SUCCESS" ? (
-                      <i className="bx bx-check-circle message__icon"></i>
-                    ) : (
-                      <i className="bx bx-x message__icon"></i>
-                    )}
-                  </h3>
+            <div className="contact__form-action">
+              <button
+                type="submit"
+                className="contact__submit"
+                disabled={status === "loading"}
+              >
+                {status === "loading" ? (
+                  <>
+                    Sending
+                    <SyncLoader color={"#ffffff"} size={6} />
+                  </>
+                ) : (
+                  <>
+                    Send message
+                    <i className="uil uil-message"></i>
+                  </>
                 )}
-              </div>
-            </form>
-          </div>
+              </button>
+
+              {status === "success" && (
+                <span className="contact__message contact__message--ok">
+                  <i className="uil uil-check-circle"></i>
+                  Message sent — check your inbox for confirmation.
+                </span>
+              )}
+              {status === "failed" && (
+                <span className="contact__message contact__message--err">
+                  <i className="uil uil-exclamation-triangle"></i>
+                  Failed to send. Please try again or email me directly.
+                </span>
+              )}
+            </div>
+          </form>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
