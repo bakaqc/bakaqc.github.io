@@ -1,18 +1,26 @@
 @use "./setup.scss" as *;
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
 
-//Responsive typography
+// === Responsive typography ===
+@media screen and (max-width: 1200px) {
+  :root {
+    --display-font-size: 4.5rem;
+  }
+}
+
 @media screen and (max-width: 992px) {
   :root {
-    --big-font-size: 2.75rem;
-    --h1-font-size: 1.5rem;
-    --h2-font-size: 1.25rem;
-    --h3-font-size: 1rem;
-    --normal-font-size: 0.938rem;
-    --small-font-size: 0.813rem;
+    --display-font-size: 3.5rem;
+    --big-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: 0.9375rem;
+    --small-font-size: 0.8125rem;
     --smaller-font-size: 0.75rem;
   }
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -29,18 +37,29 @@ input,
 textarea {
   font-family: $body-font;
   font-size: $normal-font-size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background-color: $body-color;
-  color: $text-color;
+  background-color: $bg;
+  color: $ink-soft;
+  letter-spacing: -0.01em;
+  background-image:
+    radial-gradient(circle at 12% -10%, rgba(255, 87, 34, 0.06), transparent 40%),
+    radial-gradient(circle at 110% 110%, rgba(10, 10, 10, 0.04), transparent 35%);
+  background-attachment: fixed;
 }
 
 h1,
 h2,
-h3 {
-  color: $title-color;
-  font-weight: $font-semi-bold;
+h3,
+h4 {
+  color: $ink;
+  font-family: $display-font;
+  font-weight: $font-bold;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
 }
 
 ul {
@@ -49,12 +68,14 @@ ul {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 button {
   outline: none;
   border: none;
   cursor: pointer;
+  font-family: inherit;
 }
 
 img {
@@ -62,36 +83,66 @@ img {
   height: auto;
 }
 
+::selection {
+  background-color: $ink;
+  color: $bg;
+}
+
+// === Sections ===
 .section {
-  padding: 6rem 0 2rem;
+  padding: 7rem 0 4rem;
+  position: relative;
+}
+
+.section__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: $mono-font;
+  font-size: $smaller-font-size;
+  font-weight: $font-medium;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $accent;
+  margin-bottom: 1rem;
+
+  &::before {
+    content: "";
+    width: 28px;
+    height: 1.5px;
+    background: $accent;
+  }
 }
 
 .section__title {
   font-size: $h1-font-size;
-  color: $title-color;
+  color: $ink;
+  font-weight: $font-extra-bold;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.03em;
 }
 
 .section__header {
   font-size: $h2-font-size;
-  color: $title-color;
+  color: $ink;
+  font-weight: $font-bold;
 }
 
 .section__subtitle {
   display: block;
-  font-size: $small-font-size;
-  margin-bottom: 3rem;
+  font-size: $normal-font-size;
+  color: $ink-muted;
+  margin-bottom: 3.5rem;
+  max-width: 560px;
 }
 
-.section__title,
-.section__header,
-.section__subtitle {
-  text-align: center;
-}
-
+// === Container & grid ===
 .container {
-  max-width: 968px;
+  max-width: 1180px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .grid {
@@ -99,17 +150,42 @@ img {
   gap: 1.5rem;
 }
 
+// === Buttons ===
 .button {
-  display: inline-block;
-  background-color: $title-color;
-  color: $container-color;
-  padding: 1.25rem 2rem;
-  border-radius: 1rem;
-  font-weight: $font-medium;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: $ink;
+  color: $bg;
+  padding: 1rem 1.75rem;
+  border-radius: $radius-pill;
+  font-weight: $font-semi-bold;
+  font-size: $small-font-size;
+  letter-spacing: -0.01em;
+  border: 1.5px solid $ink;
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $accent;
+    border-color: $accent;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 87, 34, 0.25);
+  }
 }
 
-.button:hover {
-  background-color: $title-color-dark;
+.button--outline {
+  background-color: transparent;
+  color: $ink;
+
+  &:hover {
+    background-color: $ink;
+    color: $bg;
+    border-color: $ink;
+    box-shadow: $shadow-md;
+  }
 }
 
 .button__icon {
@@ -121,19 +197,19 @@ img {
   align-items: center;
 }
 
+// === Responsive ===
 @media screen and (max-width: 992px) {
   .container {
-    margin-left: $mb-1-5;
-    margin-right: $mb-1-5;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .section {
+    padding: 5rem 0 3rem;
   }
 
   .button {
-    padding: 1rem 1.75rem;
-  }
-
-  .button__icon {
-    width: 22px;
-    height: 22px;
+    padding: 0.875rem 1.5rem;
   }
 }
 
@@ -141,8 +217,9 @@ img {
   body {
     margin: 0 0 $header-height 0;
   }
+
   .section {
-    padding: 2rem 0 4rem;
+    padding: 4rem 0 3rem;
   }
 
   .section__subtitle {
@@ -155,11 +232,12 @@ img {
     --big-font-size: 2.25rem;
   }
   .container {
-    margin-left: $mb-1;
-    margin-right: $mb-1;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
+// === Loading ===
 .loading {
   display: flex;
   justify-content: center;
