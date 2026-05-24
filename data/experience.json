@@ -1,0 +1,111 @@
+{
+  "experience": [
+    {
+      "id": 1,
+      "role": "Tech Officer",
+      "company": "WeCare Group",
+      "period": "Nov 2025 — Present",
+      "type": "Full-time",
+      "location": "Quy Nhon, Vietnam",
+      "current": true,
+      "summary": "Building internal accounting & supply-chain automation on the Microsoft Power Platform and Azure ecosystem. End-to-end ownership across backend services, frontend code apps, reporting, and AI-assisted document workflows.",
+      "highlights": [
+        "Designed and maintained TypeScript services on Azure Functions v4 backed by Microsoft Dataverse — covering integration jobs, scheduled processing, and queue-based workflows.",
+        "Shipped role-based Power Apps Code Apps with React 19, Vite, Fluent UI v9 and MSAL — wiring authenticated frontends to internal accounting & finance modules.",
+        "Applied accounting domain logic (GL postings, vendor allocation, voucher reconciliation, period-end reporting) — implementation details kept confidential per company policy.",
+        "Integrated an AI document-mapping pipeline on Azure AI Foundry to assist routine finance verification, with human-in-the-loop validation.",
+        "Maintained the Power BI reporting suite and a library of Dataverse Web Resources used across finance & operations teams."
+      ],
+      "stack": [
+        "TypeScript",
+        "React 19",
+        "Azure Functions v4",
+        "Microsoft Dataverse",
+        "Power Apps Code App",
+        "Power BI",
+        "Power Automate",
+        "MSAL",
+        "Fluent UI v9",
+        "TanStack Query",
+        "Azure AI Foundry"
+      ]
+    },
+    {
+      "id": 2,
+      "role": "Frontend Developer · Mobile Developer",
+      "company": "Âu Châu Education",
+      "period": "Nov 2025 — Present",
+      "type": "Part-time",
+      "location": "Remote",
+      "current": true,
+      "summary": "Part-time engineer on the Âu Châu Education LMS — building the Vue 3 admin dashboard with TypeScript and the React Native (Expo) student app, with shared focus on API integration and reusable UI.",
+      "highlights": [
+        "Web dashboard on Vue 3 + TypeScript + Vite, PrimeVue 4 components, Pinia state, Vue Router, TailwindCSS — modules for students, classrooms, schedules, attendance, exams, and tuition.",
+        "Mobile app on React Native 0.83 + Expo 55 + Expo Router, TypeScript, TanStack Query + Zustand, NativeWind, React Native Paper — student-facing flows for courses, lessons, schedules, attendance, and homework.",
+        "Built the Axios HTTP layer for both apps: JWT auth, token refresh on 401, request queuing, and a modular service layer per domain.",
+        "Integrated Firebase Auth, Firestore, and Cloud Messaging on mobile — including push notifications and offline-friendly persistence via AsyncStorage.",
+        "Shipped dashboard widgets with Chart.js, FullCalendar scheduling, and ExcelJS-based data export."
+      ],
+      "stack": [
+        "Vue 3",
+        "TypeScript",
+        "Vite",
+        "PrimeVue 4",
+        "Pinia",
+        "TailwindCSS",
+        "React Native 0.83",
+        "Expo 55",
+        "Expo Router",
+        "TanStack Query",
+        "Zustand",
+        "NativeWind",
+        "Firebase",
+        "Axios"
+      ]
+    },
+    {
+      "id": 3,
+      "role": "Backend Developer",
+      "company": "PAXU · MMS Software",
+      "period": "Jun — Jul 2025",
+      "type": "Remote · Part-time",
+      "location": "Remote",
+      "summary": "Built and maintained the backend of PAXU — a personal finance Android app for spending management, loan capacity calculation, fee estimation, and living-cost comparison.",
+      "highlights": [
+        "Implemented backend services on Node.js, Express, MongoDB and Parse Server.",
+        "Led two critical migrations: Parse Server 2.8 → 8.2.1 and MongoDB v4 → v6, with zero downtime for live users.",
+        "Collaborated with a fully remote, cross-functional team to ship production features on a tight cadence."
+      ],
+      "stack": ["Node.js", "Express", "MongoDB", "Parse Server"]
+    },
+    {
+      "id": 4,
+      "role": "CMS Migration Engineer",
+      "company": "FPT Software Quy Nhon",
+      "period": "Apr — Aug 2024",
+      "type": "Internship",
+      "location": "Quy Nhon, Vietnam",
+      "summary": "Joined an enterprise CMS migration project — ported legacy content models, validated data integrity end-to-end, and shipped regression test suites across the bug-tracking lifecycle.",
+      "highlights": [
+        "Migrated content schemas and assets to the new CMS while preserving routing, metadata, and editorial workflows.",
+        "Authored test plans and executed regression cycles on production-grade modules, catching parity issues before go-live.",
+        "Practiced industry standards for defect reporting and traceability across migration sprints."
+      ],
+      "stack": ["CMS Migration", "Content Modeling", "Regression Testing", "JIRA"]
+    },
+    {
+      "id": 5,
+      "role": "Student Experience Program",
+      "company": "FPT Software Quy Nhon",
+      "period": "May — Dec 2023",
+      "type": "Program",
+      "location": "Quy Nhon, Vietnam",
+      "summary": "Selected for FPT Software's on-site student experience program — hands-on exposure to real engineering workflows, agile ceremonies and enterprise tooling.",
+      "highlights": [
+        "Worked alongside professional engineers on internal tasks.",
+        "First professional touchpoint with version control, code review, and team-based delivery."
+      ],
+      "stack": ["Git", "Agile", "Team Workflows"]
+    }
+  ]
+}
