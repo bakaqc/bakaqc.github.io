@@ -1,30 +1,48 @@
 $header-height: 4rem;
 
-// === Colors — Light minimal + bold accent ===
-$bg: #fafaf9;
-$bg-elevated: #ffffff;
-$bg-muted: #f4f4f2;
-$border: #e7e5e0;
-$border-strong: #1a1a1a;
+// =====================================================================
+//  "Living System" — dark token system
+//  Two structural hues: accent orange = signal/you, wire blue = system.
+// =====================================================================
 
-$ink: #0a0a0a;
-$ink-soft: #525252;
-$ink-muted: #8a8a8a;
+// === Ground (warm near-black) ===
+$bg: #0d0d0f;
+$bg-elevated: #16151b;
+$bg-muted: #1b1a22;
+$surface: #1b1a22;
 
-$accent: #ff5722;
-$accent-soft: #fff1ec;
-$accent-ink: #b73f17;
+// === Lines / structure ===
+$border: #2a2833;
+$border-strong: #3a3844;
+$grid: rgba(120, 160, 220, 0.08);
+$wire: #7fb2ff; // desaturated blueprint blue — wiring
 
-// Legacy alias retained for components not yet refactored
+// === Text ===
+$ink: #edecf2; // primary (titles)
+$ink-soft: #b7b5c2; // body copy
+$ink-muted: #8a8894; // tertiary / captions
+$faint: #6a6875; // faintest / dividers labels
+
+// === Accent (signal / "you") ===
+$accent: #ff5722; // large / graphic marks, CTAs
+$accent-ink: #ff8a63; // orange *text* on dark (AA-safe)
+$accent-soft: rgba(255, 87, 34, 0.12);
+$accent-glow: rgba(255, 87, 34, 0.28);
+
+// === Semantic status (NOT an accent) ===
+$ok: #4ade80;
+$warn: #fbbf24;
+
+// Legacy aliases retained so not-yet-refactored files keep compiling
 $title-color: $ink;
-$title-color-dark: #000000;
+$title-color-dark: #ffffff;
 $text-color: $ink-soft;
-$topic-color: $accent;
+$topic-color: $accent-ink;
 $body-color: $bg;
 $container-color: $bg-elevated;
 
 // === Typography ===
-$body-font: "Inter", "Poppins", sans-serif;
+$body-font: "Inter", "Space Grotesk", sans-serif;
 $display-font: "Space Grotesk", "Inter", sans-serif;
 $mono-font: "JetBrains Mono", "Fira Code", monospace;
 
@@ -66,12 +84,33 @@ $radius-md: 12px;
 $radius-lg: 20px;
 $radius-pill: 999px;
 
-// === Shadow (soft, minimal) ===
-$shadow-sm: 0 1px 2px rgba(10, 10, 10, 0.04);
-$shadow-md: 0 4px 12px rgba(10, 10, 10, 0.06);
-$shadow-lg: 0 12px 32px rgba(10, 10, 10, 0.08);
+// === Shadow (deep, for dark ground) ===
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+$shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+$shadow-lg: 0 24px 60px -18px rgba(0, 0, 0, 0.7);
 
 // === Z-index ===
 $z-tooltip: 10;
 $z-fixed: 100;
 $z-modal: 1000;
+
+// === Mirror tokens as CSS custom properties (for TS/canvas components) ===
+:root {
+  --bg: #{$bg};
+  --bg-elevated: #{$bg-elevated};
+  --surface: #{$surface};
+  --border: #{$border};
+  --border-strong: #{$border-strong};
+  --grid: #{$grid};
+  --wire: #{$wire};
+  --text: #{$ink};
+  --muted: #{$ink-soft};
+  --faint: #{$faint};
+  --accent: #{$accent};
+  --accent-ink: #{$accent-ink};
+  --accent-glow: #{$accent-glow};
+  --ok: #{$ok};
+  --mono: #{$mono-font};
+  --display: #{$display-font};
+  --body: #{$body-font};
+}
