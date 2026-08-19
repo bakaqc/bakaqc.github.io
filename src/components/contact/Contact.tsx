@@ -1,13 +1,26 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import SyncLoader from "react-spinners/SyncLoader";
+import SectionHeader from "../common/SectionHeader";
 import "./Contact.scss";
+import { EMAIL } from "../../data/socials";
 
 type Status = "idle" | "loading" | "success" | "failed";
 
 const Contact = () => {
   const form = useRef<HTMLFormElement | null>(null);
   const [status, setStatus] = useState<Status>("idle");
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard?.writeText(EMAIL).then(
+      () => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      },
+      () => setCopied(false)
+    );
+  };
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -42,12 +55,12 @@ const Contact = () => {
   return (
     <section className="contact section" id="contact">
       <div className="container">
-        <span className="section__eyebrow">Contact</span>
-        <h2 className="section__title">Let's talk.</h2>
-        <p className="section__subtitle">
-          Got a project, a question, or just want to say hi? Pick whichever
-          channel feels right — I usually reply within a day or two.
-        </p>
+        <SectionHeader
+          index="05"
+          path="contact"
+          title="Open a channel."
+          subtitle="Got a project or a question? Pick a channel — I usually reply within a day."
+        />
 
         <div className="contact__grid">
           <div className="contact__channels">
@@ -79,20 +92,6 @@ const Contact = () => {
 
             <a
               className="contact__channel"
-              href="https://discord.gg/RRFQVqfJ"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="uil uil-discord"></i>
-              <div>
-                <span className="contact__channel-label">Discord</span>
-                <span className="contact__channel-value">Quoc Chuong · BaKa</span>
-              </div>
-              <i className="uil uil-arrow-up-right contact__channel-arrow"></i>
-            </a>
-
-            <a
-              className="contact__channel"
               href="https://www.linkedin.com/in/bakaqc"
               target="_blank"
               rel="noopener noreferrer"
@@ -104,6 +103,11 @@ const Contact = () => {
               </div>
               <i className="uil uil-arrow-up-right contact__channel-arrow"></i>
             </a>
+
+            <button type="button" className="contact__copy" onClick={copyEmail}>
+              <i className={`uil ${copied ? "uil-check" : "uil-copy"}`}></i>
+              {copied ? "copied to clipboard" : `copy ${EMAIL}`}
+            </button>
           </div>
 
           <form ref={form} onSubmit={sendEmail} className="contact__form">
@@ -146,7 +150,7 @@ const Contact = () => {
                 {status === "loading" ? (
                   <>
                     Sending
-                    <SyncLoader color={"#ffffff"} size={6} />
+                    <SyncLoader color={"#0d0d0f"} size={6} />
                   </>
                 ) : (
                   <>

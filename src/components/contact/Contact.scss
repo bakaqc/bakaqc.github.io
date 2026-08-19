@@ -25,7 +25,7 @@
   background: $bg-elevated;
   border: 1px solid $border;
   color: $ink-soft;
-  transition: all 0.25s ease;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 
   > i:first-child {
     display: inline-flex;
@@ -35,7 +35,7 @@
     height: 44px;
     border-radius: $radius-md;
     background: $bg-muted;
-    color: $ink;
+    color: $wire;
     font-size: 1.2rem;
     transition: all 0.25s ease;
   }
@@ -67,23 +67,47 @@
   &-arrow {
     color: $ink-muted;
     font-size: 1.1rem;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, color 0.2s ease;
   }
 
   &:hover {
-    border-color: $ink;
+    border-color: $accent;
     transform: translateY(-2px);
     box-shadow: $shadow-md;
 
     > i:first-child {
-      background: $ink;
-      color: $accent;
+      background: $accent-soft;
+      color: $accent-ink;
     }
 
     .contact__channel-arrow {
-      color: $ink;
+      color: $accent-ink;
       transform: translate(3px, -3px);
     }
+  }
+}
+
+.contact__copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: flex-start;
+  margin-top: 0.15rem;
+  padding: 0.55rem 0.95rem;
+  border-radius: $radius-pill;
+  background: transparent;
+  border: 1px dashed $border-strong;
+  color: $ink-muted;
+  font-family: $mono-font;
+  font-size: $smaller-font-size;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  i { font-size: 0.95rem; }
+
+  &:hover {
+    border-color: $accent;
+    color: $accent-ink;
   }
 }
 
@@ -126,6 +150,11 @@
     font-size: $smaller-font-size;
     font-weight: $font-medium;
     color: $ink-soft;
+
+    &::before {
+      content: "> ";
+      color: $faint;
+    }
   }
 
   input,
@@ -136,10 +165,10 @@
     border: 1.5px solid $border;
     border-radius: $radius-md;
     padding: 0.85rem 1rem;
-    font-family: $body-font;
-    font-size: $normal-font-size;
+    font-family: $mono-font;
+    font-size: $small-font-size;
     color: $ink;
-    transition: all 0.2s ease;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
     resize: none;
 
     &::placeholder {
@@ -148,9 +177,9 @@
 
     &:focus {
       outline: none;
-      border-color: $ink;
-      background: $bg-elevated;
-      box-shadow: 0 0 0 4px rgba(10, 10, 10, 0.05);
+      border-color: $accent;
+      background: $bg-muted;
+      box-shadow: 0 0 0 4px $accent-soft;
     }
   }
 
@@ -172,11 +201,12 @@
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  background: $ink;
-  color: $bg;
-  border: 1.5px solid $ink;
+  background: $accent;
+  color: #0d0d0f;
+  border: 1.5px solid $accent;
   padding: 0.95rem 1.6rem;
   border-radius: $radius-pill;
+  font-family: $mono-font;
   font-weight: $font-semi-bold;
   font-size: $small-font-size;
   cursor: pointer;
@@ -185,14 +215,11 @@
   i { font-size: 1.05rem; }
 
   &:hover:not(:disabled) {
-    background: $accent;
-    border-color: $accent;
-    color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(255, 87, 34, 0.25);
+    box-shadow: 0 10px 24px $accent-glow;
   }
 
-  &:disabled { cursor: progress; }
+  &:disabled { cursor: progress; opacity: 0.85; }
 }
 
 .contact__message {
@@ -205,8 +232,8 @@
 
   i { font-size: 1rem; }
 
-  &--ok { color: #15803d; }
-  &--err { color: #b91c1c; }
+  &--ok { color: $ok; }
+  &--err { color: #f87171; }
 }
 
 @media screen and (max-width: 992px) {
