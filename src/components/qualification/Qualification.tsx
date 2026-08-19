@@ -1,5 +1,8 @@
 import "./Qualification.scss";
 import qualificationData from "../../../data/qualification.json";
+import fptLogo from "../../assets/info/fpt_logo.jpg";
+import SectionHeader from "../common/SectionHeader";
+import { useReveal } from "../../hooks/useReveal";
 
 interface Achievement {
   label: string;
@@ -21,18 +24,22 @@ interface EducationItem {
 
 const Qualification = () => {
   const education = qualificationData.education as EducationItem[];
+  const { ref, visible } = useReveal<HTMLDivElement>();
 
   return (
     <section className="qualification section" id="qualification">
       <div className="container">
-        <span className="section__eyebrow">Education</span>
-        <h2 className="section__title">Academic background.</h2>
-        <p className="section__subtitle">
-          Where the foundations were built — degree, focus areas, and the
-          milestones I picked up along the way.
-        </p>
+        <SectionHeader
+          index="04"
+          path="education"
+          title="Foundations."
+          subtitle="Degree, focus areas, milestones."
+        />
 
-        <div className="qualification__stack">
+        <div
+          ref={ref}
+          className={`qualification__stack reveal ${visible ? "reveal--in" : ""}`}
+        >
           {education.map((item) => (
             <article className="edu-card" key={item.id}>
               <div className="edu-card__ornament" aria-hidden>
@@ -62,8 +69,12 @@ const Qualification = () => {
                       </text>
                     </svg>
                     <div className="edu-card__seal-core">
-                      <i className="uil uil-graduation-cap"></i>
-                      <span>BSE</span>
+                      <img
+                        src={fptLogo}
+                        alt="FPT University · Quy Nhon AI Campus"
+                        className="edu-card__seal-logo"
+                        loading="lazy"
+                      />
                     </div>
                   </div>
                   <span className="edu-card__status">

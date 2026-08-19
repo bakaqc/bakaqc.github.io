@@ -30,14 +30,14 @@
     content: "";
     position: absolute;
     inset: 12px;
-    border: 1px dashed rgba(10, 10, 10, 0.08);
+    border: 1px dashed rgba(127, 178, 220, 0.14);
     border-radius: 18px;
     pointer-events: none;
     z-index: 0;
   }
 
   &:hover {
-    border-color: $ink;
+    border-color: $accent;
     transform: translateY(-3px);
     box-shadow: $shadow-lg;
   }
@@ -142,32 +142,22 @@
   width: 124px;
   height: 124px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle at 30% 25%,
-    color.adjust($accent, $lightness: 12%),
-    $accent 65%,
-    $accent-ink 100%
-  );
-  color: $bg;
+  overflow: hidden;
+  background: $bg;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.15rem;
-  box-shadow: 0 14px 32px rgba(255, 87, 34, 0.35),
-    inset 0 0 0 4px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 14px 32px rgba(255, 87, 34, 0.3);
+}
 
-  i {
-    font-size: 2.6rem;
-    line-height: 1;
-  }
-
-  span {
-    font-family: $display-font;
-    font-weight: $font-extra-bold;
-    font-size: 1rem;
-    letter-spacing: 0.12em;
-  }
+.edu-card__seal-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  // scale up so the logo's circular mark meets the round edge,
+  // cropping the white square background/margin of the source image
+  transform: scale(1.16);
 }
 
 .edu-card__status {
@@ -176,9 +166,9 @@
   gap: 0.5rem;
   padding: 0.45rem 0.9rem;
   border-radius: $radius-pill;
-  background: rgba(34, 197, 94, 0.1);
-  border: 1px solid rgba(34, 197, 94, 0.3);
-  color: #15803d;
+  background: rgba(74, 222, 128, 0.12);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  color: $ok;
   font-family: $mono-font;
   font-size: $smaller-font-size;
   font-weight: $font-semi-bold;
