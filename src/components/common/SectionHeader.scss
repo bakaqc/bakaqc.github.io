@@ -1,0 +1,42 @@
+@use "../../setup.scss" as *;
+
+.sectionhead {
+  margin-bottom: 2.5rem;
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-family: $mono-font;
+    font-size: $smaller-font-size;
+    margin-bottom: 1.1rem;
+    flex-wrap: wrap;
+  }
+
+  &__prompt {
+    color: $faint;
+    font-weight: $font-semi-bold;
+  }
+
+  &__cmd {
+    color: $accent-ink;
+  }
+
+  &__index {
+    color: $faint;
+    padding-left: 0.6rem;
+    margin-left: 0.2rem;
+    border-left: 1px solid $border;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: $tiny-font-size;
+  }
+
+  &__title {
+    margin-bottom: 0.75rem;
+  }
+
+  &__subtitle {
+    margin-bottom: 0;
+  }
+}
