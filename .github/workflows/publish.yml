@@ -30,8 +30,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'yarn'
       - name: Install dependencies
-        run: yarn
+        run: yarn install --frozen-lockfile --ignore-engines
+      - name: Lint
+        run: yarn lint
       - name: Build
         run: yarn build
       - name: Setup Pages
