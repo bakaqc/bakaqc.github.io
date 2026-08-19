@@ -1,5 +1,6 @@
 import "./Footer.scss";
 import avatar from "../../assets/info/avt.jpg";
+import { SOCIALS } from "../../data/socials";
 
 const FOOTER_NAV = [
   { href: "#about", label: "About" },
@@ -10,11 +11,10 @@ const FOOTER_NAV = [
 ];
 
 const FOOTER_SOCIALS = [
-  { href: "https://github.com/bakaqc", label: "GitHub", icon: "uil-github-alt" },
-  { href: "https://www.linkedin.com/in/bakaqc", label: "LinkedIn", icon: "uil-linkedin" },
-  { href: "https://www.facebook.com/dqchuongbk", label: "Facebook", icon: "uil-facebook-f" },
-  { href: "https://discord.gg/uGEvmrqD", label: "Discord", icon: "uil-discord" },
-  { href: "https://ko-fi.com/bakaqc", label: "Ko-fi", icon: "uil-heart-alt" },
+  SOCIALS.github,
+  SOCIALS.linkedin,
+  SOCIALS.facebook,
+  SOCIALS.kofi,
 ];
 
 const Footer = () => {
@@ -45,10 +45,15 @@ const Footer = () => {
           </nav>
         </div>
 
+        <p className="footer__motto">
+          <span className="footer__motto-slash">//</span> you may delay, but
+          time will not.
+        </p>
+
         <div className="footer__bottom">
           <span className="footer__copy">
-            © {year} Quoc Chuong (bakaqc) — built with React, Vite, and a lot
-            of coffee.
+            © {year} Quoc Chuong (bakaqc) — built with React · Vite · deployed
+            on GitHub Pages
           </span>
           <div className="footer__socials">
             {FOOTER_SOCIALS.map((s) => (

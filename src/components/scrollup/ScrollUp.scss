@@ -10,15 +10,15 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: $ink;
-  color: $bg;
-  box-shadow: $shadow-md;
+  background: $accent;
+  color: #0d0d0f;
+  box-shadow: 0 8px 22px $accent-glow;
   z-index: $z-tooltip;
-  transition: bottom 0.3s ease, transform 0.2s ease, background-color 0.2s ease;
+  transition: bottom 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 
   &:hover {
-    background: $accent;
     transform: translateY(-3px);
+    box-shadow: 0 12px 28px $accent-glow;
     cursor: pointer;
   }
 }

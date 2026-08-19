@@ -1,9 +1,23 @@
 @use "../../setup.scss" as *;
 
 .footer {
-  background: $ink;
-  color: rgba(255, 255, 255, 0.7);
+  position: relative;
+  background: $bg-elevated;
+  border-top: 1px solid $border;
+  color: $ink-soft;
   margin-top: 4rem;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, $accent, transparent);
+    opacity: 0.6;
+  }
 }
 
 .footer__container {
@@ -16,7 +30,7 @@
   align-items: flex-start;
   gap: 2rem;
   padding-bottom: 2.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid $border;
   flex-wrap: wrap;
 }
 
@@ -34,8 +48,8 @@
   height: 44px;
   border-radius: 12px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: $bg-muted;
+  border: 1px solid $border-strong;
 
   img {
     width: 100%;
@@ -49,7 +63,7 @@
   font-family: $display-font;
   font-size: 1.2rem;
   font-weight: $font-extra-bold;
-  color: #ffffff;
+  color: $ink;
   letter-spacing: -0.025em;
   margin-bottom: 0.15rem;
 }
@@ -57,7 +71,7 @@
 .footer__tagline {
   font-family: $mono-font;
   font-size: $smaller-font-size;
-  color: rgba(255, 255, 255, 0.55);
+  color: $ink-muted;
 }
 
 .footer__nav {
@@ -67,16 +81,30 @@
 }
 
 .footer__link {
+  font-family: $mono-font;
   font-size: $small-font-size;
-  font-weight: $font-medium;
-  color: rgba(255, 255, 255, 0.65);
+  color: $ink-muted;
   padding: 0.45rem 0.85rem;
   border-radius: $radius-pill;
   transition: all 0.2s ease;
 
   &:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.06);
+    color: $accent-ink;
+    background: $accent-soft;
+  }
+}
+
+.footer__motto {
+  font-family: $mono-font;
+  font-size: $small-font-size;
+  color: $ink-muted;
+  padding: 1.75rem 0 0.5rem;
+  font-style: italic;
+
+  &-slash {
+    color: $accent;
+    font-style: normal;
+    margin-right: 0.35rem;
   }
 }
 
@@ -84,7 +112,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 1.75rem;
+  padding-top: 1.25rem;
   gap: 1.5rem;
   flex-wrap: wrap;
 }
@@ -92,7 +120,7 @@
 .footer__copy {
   font-family: $mono-font;
   font-size: $smaller-font-size;
-  color: rgba(255, 255, 255, 0.5);
+  color: $faint;
 }
 
 .footer__socials {
@@ -107,14 +135,16 @@
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.75);
+  background: $bg-muted;
+  border: 1px solid $border;
+  color: $ink-soft;
   font-size: 1.1rem;
   transition: all 0.2s ease;
 
   &:hover {
     background: $accent;
-    color: #ffffff;
+    border-color: $accent;
+    color: #0d0d0f;
     transform: translateY(-2px);
   }
 }
