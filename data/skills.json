@@ -1,0 +1,74 @@
+{
+  "primary": [
+    {
+      "id": "platform",
+      "label": "Work Stack · Power Platform & Azure",
+      "caption": "Daily driver at WeCare Group — accounting & supply-chain automation.",
+      "icons": "azure,ts,react,nodejs,nextjs",
+      "pills": [
+        "Power Apps Code App",
+        "Power BI",
+        "Power Automate",
+        "Microsoft Dataverse",
+        "Azure Functions v4",
+        "Azure AI Foundry",
+        "MSAL",
+        "Fluent UI v9",
+        "TanStack Query",
+        "ReactFlow",
+        "FAST Accounting API",
+        "MISA e-Invoice"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "languages",
+      "label": "Languages",
+      "caption": "Day-to-day across backend, frontend, mobile.",
+      "icons": "ts,javascript,java,kotlin,c,html,css,sass,pug",
+      "pills": ["TypeScript", "JavaScript", "Java", "Kotlin", "C", "HTML", "CSS", "Sass", "Pug"]
+    },
+    {
+      "id": "frameworks",
+      "label": "Frameworks & Libraries",
+      "caption": "Backend-first, React-comfortable.",
+      "icons": "react,nextjs,nodejs,express,nestjs,redux,graphql,prisma,hibernate,bootstrap,tailwind,mongo,mysql,postgresql",
+      "pills": [
+        "React 18 / 19",
+        "Next.js",
+        "Node.js",
+        "Express",
+        "NestJS",
+        "Redux",
+        "GraphQL",
+        "Prisma",
+        "Hibernate",
+        "Tailwind",
+        "MongoDB",
+        "MySQL",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "id": "tools",
+      "label": "Tools & Platforms",
+      "caption": "Shipping, debugging, and the daily quality-of-life kit.",
+      "icons": "docker,azure,firebase,supabase,vite,maven,yarn,npm,pnpm,postman,git,github,vscode,androidstudio,figma",
+      "pills": [
+        "Docker",
+        "Azure",
+        "Firebase",
+        "Supabase",
+        "Vite",
+        "Maven",
+        "pnpm",
+        "Postman",
+        "Git / GitHub",
+        "VS Code",
+        "Android Studio",
+        "Figma"
+      ]
+    }
+  ]
+}
