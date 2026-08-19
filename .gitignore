@@ -27,3 +27,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Private working notes - never publish (contains internal employer data)
+EXPERIENCE-HIGHLIGHTS.md
+docs/superpowers/
+
+# Local tooling output
+.playwright-mcp/
