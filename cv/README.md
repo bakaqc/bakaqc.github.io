@@ -10,6 +10,11 @@ renders to a one-page A4 PDF.
 
 `archive/` holds superseded versions kept only for reference.
 
+Application emails and anything else naming a specific company live in
+`applications/` at the repo root, which is git-ignored in full — this repo is
+public, and a file named after a company would announce where I am applying
+while I am still employed somewhere else.
+
 ## Editing
 
 Edit the `.html` file, then re-render:
