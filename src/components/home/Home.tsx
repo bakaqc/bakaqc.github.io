@@ -7,19 +7,20 @@ const Home = () => {
     <section className="home section" id="home">
       <div className="home__container container">
         <div className="home__masthead">
-          <span className="home__byline">Quoc Chuong — Software Engineer</span>
+          <span className="home__byline">Quoc Chuong — Full Stack Developer</span>
           <span className="home__locale">Quy Nhon, VN · UTC+7</span>
         </div>
 
         <h1 className="home__title">
-          I build <span className="home__title-mark">reliable backends</span>{" "}
-          for messy <em className="home__title-em">real-world</em> operations.
+          I build <span className="home__title-mark">whole features</span> —
+          screen, API and the{" "}
+          <em className="home__title-em">third-party system</em> behind them.
         </h1>
 
         <p className="home__description">
-          Accounting &amp; supply-chain automation at{" "}
-          <strong>WeCare Group</strong> — the kind that has to reconcile to the
-          last dong, every morning.
+          Web, mobile and the services underneath, at{" "}
+          <strong>WeCare Group</strong> and on freelance product builds — the
+          kind that has to reconcile to the last dong, every morning.
         </p>
 
         <FlowLine />

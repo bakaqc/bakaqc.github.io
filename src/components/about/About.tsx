@@ -1,4 +1,4 @@
-import CV from "../../assets/info/Quoc_Chuong_Backend_Developer_CV.pdf";
+import CV from "../../assets/info/DinhQuocChuong_FullStackDeveloper_CV.pdf";
 import baka from "../../assets/info/baka.jpg";
 import experienceData from "../../../data/experience.json";
 import SectionHeader from "../common/SectionHeader";
@@ -8,7 +8,7 @@ import "./About.scss";
 const SPECS: { k: string; v: string }[] = [
   { k: "role", v: "Tech Officer @ WeCare Group" },
   { k: "base", v: "Quy Nhon, Vietnam" },
-  { k: "focus", v: "Backend · Azure · Dataverse" },
+  { k: "focus", v: "React · Node.js · Azure · Integrations" },
   { k: "status", v: "open to collaborate" },
 ];
 
@@ -26,8 +26,7 @@ const About = () => {
           path="about"
           title={
             <>
-              Backend-leaning engineer who ships <em>boringly reliable</em>{" "}
-              systems.
+              Full stack engineer who ships <em>boringly reliable</em> systems.
             </>
           }
         />
@@ -43,15 +42,15 @@ const About = () => {
 
             <div className="about__bio-body">
               <p>
-                <strong>Quoc Chuong</strong> — Software Engineer, FPT University
-                AI Campus grad (2025). Now <strong>Tech Officer @ WeCare
-                Group</strong>, owning accounting &amp; supply-chain automation
-                on Power Platform + Azure.
+                <strong>Quoc Chuong</strong> — Full Stack Developer, FPT
+                University AI Campus grad (2025). Now <strong>Tech Officer @
+                WeCare Group</strong>, building the React apps a finance team
+                works in and the services behind them.
               </p>
               <p>
                 I build systems that survive Monday morning — clean data
                 contracts, predictable queues, traceable retries. Daily stack:{" "}
-                <strong>Node.js, Azure Functions, Dataverse</strong>.
+                <strong>React, Node.js, Azure Functions</strong>.
               </p>
 
               <dl className="about__spec">
@@ -63,7 +62,11 @@ const About = () => {
                 ))}
               </dl>
 
-              <a download="" href={CV} className="about__cv">
+              <a
+                download="DinhQuocChuong_FullStackDeveloper_CV.pdf"
+                href={CV}
+                className="about__cv"
+              >
                 <i className="uil uil-file-download-alt"></i>
                 download CV
               </a>

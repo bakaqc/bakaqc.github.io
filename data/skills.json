@@ -32,22 +32,66 @@
     {
       "id": "frameworks",
       "label": "Frameworks & Libraries",
-      "caption": "Backend-first, React-comfortable.",
-      "icons": "react,nextjs,nodejs,express,nestjs,redux,graphql,prisma,hibernate,bootstrap,tailwind,mongo,mysql,postgresql",
+      "caption": "Front to back, plus mobile.",
+      "icons": "react,nextjs,vue,nodejs,express,nestjs,redux,graphql,prisma,hibernate,tailwind,mongo,mysql,postgresql,redis",
       "pills": [
         "React 18 / 19",
         "Next.js",
+        "Vue 3",
+        "React Native / Expo",
         "Node.js",
         "Express",
         "NestJS",
         "Redux",
+        "Zustand",
+        "TanStack Query",
         "GraphQL",
         "Prisma",
         "Hibernate",
         "Tailwind",
+        "Ant Design",
         "MongoDB",
         "MySQL",
-        "PostgreSQL"
+        "PostgreSQL",
+        "Redis"
+      ]
+    },
+    {
+      "id": "integrations",
+      "label": "Integrations & AI",
+      "caption": "Making systems that were never meant to talk, talk.",
+      "icons": "firebase,openai",
+      "pills": [
+        "PayOS",
+        "ZaloPay",
+        "MoMo",
+        "Clerk",
+        "NextAuth",
+        "MSAL",
+        "Firebase Auth",
+        "Socket.IO",
+        "FCM push",
+        "Azure AI Foundry",
+        "Google GenAI",
+        "Pinecone",
+        "FAST Accounting API",
+        "MISA e-Invoice"
+      ]
+    },
+    {
+      "id": "quality",
+      "label": "Testing & Delivery",
+      "caption": "What keeps a merge from breaking Monday.",
+      "icons": "githubactions,docker,sonarqube,vitest,jest",
+      "pills": [
+        "Vitest",
+        "Jest",
+        "unit + e2e tests",
+        "GitHub Actions CI/CD",
+        "SonarCloud gates",
+        "GitFlow",
+        "Conventional Commits",
+        "code review"
       ]
     },
     {

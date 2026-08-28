@@ -9,31 +9,31 @@
       "location": "Quy Nhon, Vietnam",
       "current": true,
       "primary": true,
-      "summary": "End-to-end owner of the finance & supply-chain automation platform — from data pipelines to the apps teams use every day.",
+      "summary": "Five internal React apps and the TypeScript services behind them — for a finance team that runs on them every day.",
       "highlights": [
-        "Automated the accounting close — GL postings, vendor allocation, voucher reconciliation, period-end",
-        "Integrated FAST Accounting & MISA e-invoice end-to-end",
-        "Shipped role-based internal apps for the finance & accounting teams",
-        "AI-assisted document verification with human-in-the-loop review",
-        "Self-serve reporting for finance & operations"
+        "Five React apps — multi-level approval, reconciliation screens, config explorer",
+        "REST services on Azure Functions — query building, paging, one response envelope",
+        "Two-way integration with external accounting & e-invoice systems",
+        "AI-assisted line matching — deterministic rules first, LLM agent as fallback",
+        "Reviewed pipeline across 13 repos — CI gates, tests, deploy on merge"
       ],
       "stack": [
+        "React",
         "TypeScript",
         "Azure Functions",
         "Dataverse",
-        "Power Apps",
         "Power BI",
         "Azure AI"
       ]
     },
     {
       "id": 2,
-      "role": "Frontend · Mobile Developer",
+      "role": "Full Stack · Mobile Developer",
       "company": "Âu Châu Education",
       "period": "Nov 2025 — Jul 2026",
-      "type": "Part-time",
+      "type": "Freelance · Team of 10",
       "location": "Remote",
-      "summary": "Building the LMS admin dashboard and the student-facing mobile app.",
+      "summary": "Building the LMS admin dashboard, the APIs behind it, and the student-facing mobile app.",
       "highlights": [
         "Dashboard for students, classes, schedules, exams & tuition",
         "Student app — courses, attendance, homework, notifications",
@@ -47,7 +47,7 @@
       "role": "Backend Developer",
       "company": "PAXU · MMS Software",
       "period": "Jun — Jul 2025",
-      "type": "Remote · Part-time",
+      "type": "Freelance · Team of 7",
       "location": "Remote",
       "summary": "Backend for a personal-finance app — spending, loans, fees.",
       "highlights": [
@@ -60,7 +60,7 @@
       "id": 4,
       "role": "CMS Migration Engineer",
       "company": "FPT Software Quy Nhon",
-      "period": "Apr — Aug 2024",
+      "period": "May — Aug 2024",
       "type": "Internship",
       "location": "Quy Nhon, Vietnam",
       "summary": "Migrated an enterprise CMS with zero content loss.",

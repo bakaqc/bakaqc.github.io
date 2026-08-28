@@ -31,7 +31,7 @@ const Footer = () => {
             <div>
               <h3 className="footer__title">Quoc Chuong</h3>
               <p className="footer__tagline">
-                Backend-leaning Software Engineer · Tech Officer @ WeCare Group
+                Full Stack Developer · Tech Officer @ WeCare Group
               </p>
             </div>
           </div>
