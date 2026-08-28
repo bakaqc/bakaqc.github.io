@@ -1,4 +1,4 @@
-import CV from "../../assets/info/DinhQuocChuong_FullStackDeveloper_CV.pdf";
+import CV from "../../../cv/DinhQuocChuong_FullStackDeveloper_CV.pdf";
 import baka from "../../assets/info/baka.jpg";
 import experienceData from "../../../data/experience.json";
 import SectionHeader from "../common/SectionHeader";

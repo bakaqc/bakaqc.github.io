@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dinh Quoc Chuong - Full Stack Developer</title>
+<style>
+  @page { size: A4; margin: 0; }
+
+  :root{
+    --navy:#123a5a;
+    --navy-deep:#0d2c45;
+    --orange:#c0560f;
+    --orange-soft:#fbefe4;
+    --ink:#132132;
+    --ink-soft:#3a4f63;
+    --muted:#6b7f92;
+    --rule:#d3dee6;
+    --side:#f4f6f8;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html,body{
+    font-family:"Segoe UI","Calibri",Arial,Helvetica,sans-serif;
+    color:var(--ink);
+    font-size:9.5pt;
+    line-height:1.42;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  body{ background:#8a97a3; }
+
+  .page{
+    position:relative;
+    width:210mm; height:297mm;
+    background:#fff;
+    display:grid;
+    grid-template-columns:65mm 1fr;
+    overflow:hidden;
+    margin:0 auto;
+  }
+  @media screen { .page{ margin:10mm auto; box-shadow:0 4px 24px rgba(0,0,0,.28); } }
+  @media print  { .page{ margin:0; box-shadow:none; } }
+
+  /* ---------- sidebar ---------- */
+  .side{
+    background:var(--side);
+    border-right:1px solid var(--rule);
+    padding:0 6.5mm 2mm 7.5mm;
+  }
+  .main{ padding:9mm 8mm 4mm 8mm; }
+
+  .side-head{
+    background:var(--navy);
+    margin:0 -6.5mm 3.6mm -7.5mm;
+    padding:8mm 6.5mm 5mm 7.5mm;
+    border-bottom:2.6mm solid var(--orange);
+  }
+  .name{
+    font-size:19.5pt; line-height:1.06; font-weight:700;
+    letter-spacing:-.4px; color:#fff;
+  }
+  .role{
+    margin-top:3mm; font-size:9.1pt; font-weight:600; line-height:1.38;
+    color:#a8c6dc; letter-spacing:.1px;
+  }
+
+  .s-head{
+    font-size:8.7pt; font-weight:700; letter-spacing:1.3px;
+    text-transform:uppercase; color:var(--navy);
+    padding-bottom:.9mm; margin-bottom:1.5mm;
+    border-bottom:1.8px solid var(--orange);
+  }
+  .side section + section{ margin-top:2.6mm; }
+
+  .contact{ list-style:none; font-size:8.7pt; line-height:1.42; }
+  .contact li{ display:flex; gap:1.9mm; word-break:break-word; }
+  .contact .ic{ color:var(--orange); flex:0 0 3.4mm; font-weight:700; }
+  .contact a{ color:var(--ink); text-decoration:none; }
+
+  .body-txt{ font-size:8.7pt; line-height:1.43; color:var(--ink-soft); }
+
+  .skill-grp + .skill-grp{ margin-top:1.7mm; }
+  .skill-grp h4{
+    font-size:8.6pt; font-weight:700; color:var(--orange);
+    margin-bottom:.8mm; letter-spacing:.15px;
+  }
+  .skill-grp p{ font-size:8.6pt; line-height:1.42; color:var(--ink-soft); }
+
+  .kv b{ display:block; font-size:9.2pt; color:var(--navy); font-weight:700; }
+  .kv small{ display:block; font-size:8.7pt; color:var(--ink-soft); line-height:1.42; margin-top:.5mm; }
+  .kv .gpa{ color:var(--orange); font-weight:700; }
+
+  /* ---------- main ---------- */
+  .m-head{
+    font-size:10.4pt; font-weight:700; letter-spacing:1.6px;
+    text-transform:uppercase; color:#fff;
+    background:var(--navy);
+    padding:1.5mm 3mm;
+    margin-bottom:3.1mm;
+  }
+  .main section + section{ margin-top:3.8mm; }
+
+  .job{ margin-bottom:3.2mm; }
+  .job:last-child{ margin-bottom:0; }
+
+  .job-head{
+    background:linear-gradient(90deg, var(--orange-soft), rgba(251,239,228,0) 78%);
+    border-left:2.8px solid var(--orange);
+    padding:1.3mm 2.6mm 1.4mm;
+    margin-bottom:1mm;
+  }
+  .job-top{ display:flex; justify-content:space-between; align-items:baseline; gap:4mm; }
+  .job-title{ font-size:11.4pt; font-weight:700; color:var(--navy); letter-spacing:-.15px; }
+  .job-when{ font-size:8.7pt; font-weight:700; white-space:nowrap; color:var(--orange); }
+  .job-org{ font-size:9.6pt; color:var(--ink); font-weight:600; margin-top:.7mm; }
+  .job-org span{ color:var(--muted); font-weight:400; font-size:8.8pt; }
+
+  ul.b{ list-style:none; margin-top:1.5mm; }
+  ul.b li{
+    position:relative; padding-left:4.2mm; margin-bottom:1.3mm;
+    text-align:justify; font-size:9.4pt; line-height:1.40; color:var(--ink-soft);
+  }
+  ul.b li:last-child{ margin-bottom:0; }
+  ul.b li::before{
+    content:""; position:absolute; left:0; top:1.7mm;
+    width:1.7mm; height:1.7mm; background:var(--orange); border-radius:50%;
+  }
+  ul.b strong{ color:var(--navy); font-weight:700; }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <aside class="side">
+    <div class="side-head">
+      <div class="name">&#272;inh Qu&#7889;c<br>Ch&#432;&#417;ng</div>
+      <div class="role">Full Stack Developer<br>Web Products &middot; APIs &middot; Integrations</div>
+    </div>
+
+    <section>
+      <h3 class="s-head">Contact</h3>
+      <ul class="contact">
+        <li><span class="ic">T</span><span>+84 763 707 144</span></li>
+        <li><span class="ic">E</span><a href="mailto:bakaqc.dev@gmail.com">bakaqc.dev@gmail.com</a></li>
+        <li><span class="ic">L</span><span>Quy Nh&#417;n, Vi&#7879;t Nam</span></li>
+        <li><span class="ic">G</span><a href="https://github.com/bakaqc">github.com/bakaqc</a></li>
+        <li><span class="ic">I</span><a href="https://www.linkedin.com/in/bakaqc">linkedin.com/in/bakaqc</a></li>
+        <li><span class="ic">W</span><a href="https://bakaqc.github.io">bakaqc.github.io</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h3 class="s-head">Profile</h3>
+      <p class="body-txt">
+        Full stack developer across web, mobile and the services behind them. In my first
+        year of full-time work I have shipped React applications and the TypeScript APIs
+        they run on, while delivering two freelance product builds remotely alongside it.
+        Used to owning my own schedule and unblocking myself.
+      </p>
+    </section>
+
+    <section>
+      <h3 class="s-head">Skills</h3>
+
+      <div class="skill-grp">
+        <h4>Frontend &amp; mobile</h4>
+        <p>React 19, Next.js 15, Vue 3, TypeScript; responsive UI with Tailwind and Ant
+           Design; TanStack Query, Zustand; React Native / Expo.</p>
+      </div>
+
+      <div class="skill-grp">
+        <h4>Backend &amp; data</h4>
+        <p>Node.js, NestJS, Express, Azure Functions; REST, GraphQL, OData; PostgreSQL,
+           MongoDB, MySQL, Redis; Prisma, Hibernate.</p>
+      </div>
+
+      <div class="skill-grp">
+        <h4>Cloud, DevOps &amp; testing</h4>
+        <p>Azure; Docker; GitHub Actions CI/CD; SonarCloud gates; Vitest and Jest unit +
+           e2e tests; GitFlow, Conventional Commits, code review.</p>
+      </div>
+
+      <div class="skill-grp">
+        <h4>Integrations &amp; AI</h4>
+        <p>Payments (PayOS, ZaloPay, MoMo); auth (Clerk, NextAuth, Firebase); realtime
+           and push (Socket.IO, FCM); LLM APIs (Azure AI Foundry, Google GenAI);
+           vector search (Pinecone).</p>
+      </div>
+
+      <div class="skill-grp">
+        <h4>English</h4>
+        <p>Working-level reading and writing; conversational speaking. I read API specs
+           daily and write commits, pull requests and documentation in English.</p>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="s-head">Education</h3>
+      <div class="kv">
+        <b>B.E. Software Engineering</b>
+        <small>
+          FPT University, Quy Nh&#417;n Campus<br>
+          Sep 2021 &mdash; Nov 2025 &middot; <span class="gpa">GPA 3.2/4</span>
+        </small>
+      </div>
+    </section>
+  </aside>
+
+  <main class="main">
+    <section>
+      <h2 class="m-head">Work Experience</h2>
+
+      <article class="job">
+        <div class="job-head">
+          <div class="job-top">
+            <div class="job-title">Tech Officer &mdash; Full Stack Developer</div>
+            <div class="job-when">Nov 2025 &mdash; Present</div>
+          </div>
+          <div class="job-org">WeCare Group <span>&middot; Quy Nh&#417;n, full-time</span></div>
+        </div>
+        <ul class="b">
+          <li><strong>Built five internal React applications end to end.</strong>
+            Multi-level approval with threshold-based auto-clearing, reconciliation screens
+            and a configuration explorer, with role-scoped access and shared component
+            conventions.</li>
+
+          <li><strong>Designed the TypeScript services behind them.</strong>
+            REST endpoints on Azure Functions with query building, paging and one consistent
+            response envelope, so the front end handles one shape instead of several. Bulk
+            actions re-read real state before writing.</li>
+
+          <li><strong>Integrated third-party systems that were never meant to talk.</strong>
+            Two-way sync with an external accounting platform and an e-invoice provider:
+            signed requests, incremental sync from a watermark, writes keyed on a business
+            key so retries never duplicate.</li>
+
+          <li><strong>Shipped an AI-assisted feature to production.</strong>
+            Line-item matching resolves predictable cases with deterministic rules and
+            escalates only ambiguous ones to an LLM agent &mdash; lower cost, and results
+            reviewers can explain. Migrated it to a new model and API when the old one was
+            retired.</li>
+
+          <li><strong>Found and fixed a data-isolation bug in production.</strong>
+            One customer&rsquo;s records were surfacing under another; the query filtered only
+            one side of a relationship. Corrected it and reconciled the totals before
+            closing.</li>
+
+          <li><strong>Worked to a reviewed pipeline across 13 repositories.</strong>
+            GitFlow, CI gates on lint, build and tests, deploy on merge, SonarCloud.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head">
+          <div class="job-top">
+            <div class="job-title">Full Stack &amp; Mobile Developer</div>
+            <div class="job-when">Nov 2025 &mdash; Jul 2026</div>
+          </div>
+          <div class="job-org">&#194;u Ch&#226;u Education <span>&middot; freelance &middot; team of 10</span></div>
+        </div>
+        <ul class="b">
+          <li><strong>Vue 3 dashboard the offices run on.</strong>
+            Students, parents, classes, schedules, exams, course materials and tuition across
+            several centres, with responsive layouts and documents generated on the server
+            instead of rebuilt by hand.</li>
+          <li><strong>React Native app delivered alongside it.</strong>
+            Course content, attendance, homework and tuition, with push notifications, EN/VI
+            localisation and local caching that keeps the app usable on a weak connection.
+            I owned the sign-in and token-refresh flow.</li>
+          <li><strong>One feature, whole stack.</strong>
+            Followed each change from the admin screen through the API to what a student
+            sees on their phone, and shipped to both platforms from one codebase.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head">
+          <div class="job-top">
+            <div class="job-title">Backend Developer</div>
+            <div class="job-when">Jun &mdash; Jul 2025</div>
+          </div>
+          <div class="job-org">PAXU &middot; MMS Software <span>&middot; freelance &middot; team of 7</span></div>
+        </div>
+        <ul class="b">
+          <li><strong>Backend for a personal-finance product.</strong>
+            Spending management, borrowing and repayment capacity, fee estimation and
+            cost-of-living comparison.</li>
+          <li><strong>Led a platform upgrade on a live system.</strong>
+            Moved the application framework and database across several major versions,
+            sequenced so existing users kept working throughout.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2 class="m-head">Product Projects</h2>
+      <ul class="b">
+        <li><strong>BrainBox</strong> &mdash; e-learning marketplace. Backend developer and
+          team leader, team of 6: course, payment and instructor-revenue services; Clerk auth
+          with webhooks, PayOS payments, Socket.IO chat, Next.js front end for three roles.</li>
+        <li><strong>TheSync</strong> &mdash; thesis and group management platform, graduation
+          capstone. Backend developer and team leader, team of 5: NestJS + Prisma +
+          PostgreSQL, semantic matching with Google GenAI embeddings and Pinecone, jobs on
+          BullMQ and Redis.</li>
+      </ul>
+    </section>
+  </main>
+</div>
+
+</body>
+</html>

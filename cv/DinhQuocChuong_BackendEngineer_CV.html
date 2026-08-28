@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dinh Quoc Chuong - Backend Engineer</title>
+<style>
+  @page { size: A4; margin: 0; }
+
+  :root{
+    --navy:#123a5a;
+    --navy-2:#1c5a86;
+    --orange:#c0560f;
+    --orange-soft:#fbf0e6;
+    --ink:#132132;
+    --ink-soft:#3d5266;
+    --muted:#6b7f92;
+    --rule:#d3dee6;
+    --side:#f4f6f8;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html,body{
+    font-family:"Segoe UI","Calibri",Arial,Helvetica,sans-serif;
+    color:var(--ink);
+    font-size:9pt;
+    line-height:1.42;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  body{ background:#8a97a3; }
+
+  .page{
+    width:210mm; height:297mm;
+    background:#fff;
+    display:grid;
+    grid-template-columns:64mm 1fr;
+    overflow:hidden;
+    margin:0 auto;
+  }
+  @media screen { .page{ margin:10mm auto; box-shadow:0 4px 24px rgba(0,0,0,.28); } }
+  @media print  { .page{ margin:0; box-shadow:none; } }
+
+  /* ---------- sidebar ---------- */
+  .side{
+    background:var(--side);
+    border-right:1px solid var(--rule);
+    padding:0 6.5mm 3mm 7.5mm;
+  }
+  .main{ padding:10mm 8mm 4mm 8mm; }
+
+  /* navy identity block, bled to the sidebar edges */
+  .side-head{
+    background:var(--navy);
+    margin:0 -6.5mm 3.8mm -7.5mm;
+    padding:8mm 6.5mm 5mm 7.5mm;
+  }
+  .name{
+    font-size:17pt; line-height:1.08; font-weight:700;
+    letter-spacing:-.2px; color:#fff;
+  }
+  .name-rule{ height:2.4px; width:15mm; background:var(--orange); margin:3mm 0 2.8mm; }
+  .role{
+    font-size:8.6pt; font-weight:600; line-height:1.4;
+    color:#a8c6dc; letter-spacing:.1px;
+  }
+
+  .s-head{
+    font-size:8.1pt; font-weight:700; letter-spacing:1.3px;
+    text-transform:uppercase; color:var(--navy);
+    padding-bottom:1mm; margin-bottom:1.7mm;
+    border-bottom:1.6px solid var(--orange);
+  }
+  .side section + section{ margin-top:3.2mm; }
+
+  .contact{ list-style:none; font-size:8.2pt; line-height:1.4; }
+  .contact li{ display:flex; gap:1.8mm; word-break:break-word; }
+  .contact .ic{ color:var(--orange); flex:0 0 3.2mm; font-weight:700; }
+  .contact a{ color:var(--ink); text-decoration:none; }
+
+  .body-txt{ font-size:8.05pt; line-height:1.45; color:var(--ink-soft); }
+  .body-txt + .body-txt{ margin-top:1.8mm; }
+
+  .skill-grp + .skill-grp{ margin-top:1.9mm; }
+  .skill-grp h4{
+    font-size:8.1pt; font-weight:700; color:var(--orange);
+    margin-bottom:.7mm; letter-spacing:.15px;
+  }
+  .skill-grp p{ font-size:8pt; line-height:1.45; color:var(--ink-soft); }
+
+  .kv b{ display:block; font-size:8.6pt; color:var(--navy); font-weight:700; }
+  .kv small{ display:block; font-size:8.2pt; color:var(--ink-soft); line-height:1.45; margin-top:.4mm; }
+  .kv .gpa{ color:var(--orange); font-weight:700; }
+
+  /* ---------- main ---------- */
+  .m-head{
+    font-size:10.2pt; font-weight:700; letter-spacing:1.5px;
+    text-transform:uppercase; color:var(--navy);
+    border-bottom:2px solid var(--orange);
+    padding-bottom:1.4mm; margin-bottom:3.8mm;
+  }
+
+  .job{ margin-bottom:4.6mm; }
+  .job:last-child{ margin-bottom:0; }
+  .job-top{ display:flex; justify-content:space-between; align-items:baseline; gap:4mm; }
+  .job-title{ font-size:10.6pt; font-weight:700; color:var(--navy); letter-spacing:-.1px; }
+  .job-when{
+    font-size:8.1pt; font-weight:700; white-space:nowrap;
+    color:var(--orange); background:var(--orange-soft);
+    padding:.5mm 1.8mm; border-radius:1.6mm;
+  }
+  .job-org{ font-size:9.2pt; color:var(--orange); font-weight:600; margin-top:.8mm; }
+  .job-org span{ color:var(--muted); font-weight:400; font-size:8.4pt; }
+
+  ul.b{ list-style:none; margin-top:2.4mm; }
+  ul.b li{
+    position:relative; padding-left:4mm; margin-bottom:1.6mm;
+    text-align:justify; font-size:8.9pt; line-height:1.44; color:var(--ink-soft);
+  }
+  ul.b li:last-child{ margin-bottom:0; }
+  ul.b li::before{
+    content:""; position:absolute; left:0; top:1.6mm;
+    width:1.6mm; height:1.6mm; background:var(--orange); border-radius:50%;
+  }
+  ul.b strong{ color:var(--navy); font-weight:700; }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <aside class="side">
+    <div class="side-head">
+      <div class="name">&#272;inh Qu&#7889;c<br>Ch&#432;&#417;ng</div>
+      <div class="name-rule"></div>
+      <div class="role">Backend Engineer<br>Business Systems &amp; Accounting Automation</div>
+    </div>
+
+    <section>
+      <h3 class="s-head">Contact</h3>
+      <ul class="contact">
+        <li><span class="ic">T</span><span>+84 763 707 144</span></li>
+        <li><span class="ic">E</span><a href="mailto:bakaqc.dev@gmail.com">bakaqc.dev@gmail.com</a></li>
+        <li><span class="ic">L</span><span>Quy Nh&#417;n, Vi&#7879;t Nam</span></li>
+        <li><span class="ic">G</span><a href="https://github.com/bakaqc">github.com/bakaqc</a></li>
+        <li><span class="ic">I</span><a href="https://www.linkedin.com/in/bakaqc">linkedin.com/in/bakaqc</a></li>
+        <li><span class="ic">W</span><a href="https://bakaqc.github.io">bakaqc.github.io</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h3 class="s-head">Profile</h3>
+      <p class="body-txt">
+        Backend developer in my first year of full-time work, currently responsible for an
+        in-house accounting and supply-chain system &mdash; the services behind it, the
+        internal tools the finance team uses, and their documentation.
+      </p>
+      <p class="body-txt">
+        Working where a mistake turns into a wrong number someone has to explain has taught
+        me to put correctness and clear handover ahead of speed. I want to keep going that
+        way: understand the business process first, automate it second, and grow into
+        system design.
+      </p>
+    </section>
+
+    <section>
+      <h3 class="s-head">Skills</h3>
+
+      <div class="skill-grp">
+        <h4>Business &amp; accounting</h4>
+        <p>Double-entry posting and general ledger, payables and receivables,
+           period closing, master-data governance.</p>
+      </div>
+
+      <div class="skill-grp">
+        <h4>Systems &amp; integration</h4>
+        <p>Service design that holds up under retry and concurrency; incremental sync at
+           volume; batching, backoff and failure handling; joining systems never built
+           to talk to each other.</p>
+      </div>
+
+      <div class="skill-grp">
+        <h4>Platforms &amp; languages</h4>
+        <p>TypeScript, Node.js, SQL; Azure Functions; Dynamics 365 / Dataverse;
+           Power Platform; Power BI; FAST and MISA integrations.
+           Also NestJS, React, Vue, Java, PostgreSQL, MongoDB.</p>
+      </div>
+
+      <div class="skill-grp">
+        <h4>Beyond code</h4>
+        <p>Technical and end-user documentation; support for non-technical users;
+           Agile delivery and team leadership.</p>
+      </div>
+
+      <div class="skill-grp">
+        <h4>English</h4>
+        <p>Working-level reading and writing; conversational speaking. I read API specs
+           and technical docs daily, and write commits, pull requests and
+           documentation in English.</p>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="s-head">Education</h3>
+      <div class="kv">
+        <b>B.E. Software Engineering</b>
+        <small>
+          FPT University, Quy Nh&#417;n Campus<br>
+          Sep 2021 &mdash; Nov 2025 &middot; <span class="gpa">GPA 3.2/4</span>
+        </small>
+      </div>
+    </section>
+  </aside>
+
+  <main class="main">
+    <section>
+      <h2 class="m-head">Work Experience</h2>
+
+      <article class="job">
+        <div class="job-top">
+          <div class="job-title">Tech Officer &mdash; Backend Engineer</div>
+          <div class="job-when">Nov 2025 &mdash; Present</div>
+        </div>
+        <div class="job-org">WeCare Group <span>&middot; Quy Nh&#417;n, full-time</span></div>
+        <ul class="b">
+          <li><strong>Designed a configuration-driven posting engine.</strong>
+            Accounting rules are resolved from configuration at runtime, so a new
+            transaction type is configured rather than coded. Entries are proved balanced
+            before they are written, blocked outside an open period, and posted once per
+            business case &mdash; retries and concurrent flows cannot duplicate.</li>
+
+          <li><strong>Replaced ad-hoc imports with one sync pipeline.</strong>
+            Master data drifted between systems &mdash; duplicate codes, missing fields,
+            loads timing out half-finished. Incremental sync, writes keyed on the business
+            code, dependency ordering and bounded batching keep ~20K records in step
+            unattended.</li>
+
+          <li><strong>Built the internal tools the finance team works in.</strong>
+            Payment approval that routes through several levels and clears low-value items
+            automatically, plus screens for reconciling sales and purchase documents, each
+            scoped by role. Bulk approval re-reads a record&rsquo;s real state before writing,
+            after stale screens let steps be approved out of order.</li>
+
+          <li><strong>Decided where automation should stop.</strong>
+            Invoice-line matching settles predictable cases with deterministic rules and
+            escalates only genuinely ambiguous ones to an AI agent &mdash; cheaper to run,
+            and still explainable to the accountants who review it.</li>
+
+          <li><strong>Reporting the finance team can run themselves.</strong>
+            An account detail ledger with correct opening and running balances, an account
+            hierarchy that rolls up at any level without double-counting, and a procurement
+            view that surfaces goods received without documents and unit-price differences.</li>
+
+          <li><strong>Root-caused a data-isolation defect in production.</strong>
+            One customer&rsquo;s ledger rows were surfacing under another; the query filtered
+            only one side of the account relationship. Corrected both positions, then
+            reconciled against the trial balance before closing it.</li>
+
+          <li><strong>Handed the system to the people who run it.</strong>
+            Wrote the operating manual and an end-user guide organised by situation rather
+            than by document number, and ran UAT on production with those users before
+            go-live.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-top">
+          <div class="job-title">Frontend &amp; Mobile Developer</div>
+          <div class="job-when">Nov 2025 &mdash; Jul 2026</div>
+        </div>
+        <div class="job-org">&#194;u Ch&#226;u Education <span>&middot; freelance &middot; team of 10</span></div>
+        <ul class="b">
+          <li><strong>Staff dashboard the offices run on day to day.</strong>
+            Students, parents, classes, schedules, exams, course materials and tuition in
+            one place across several centres, with receipt documents generated on the server
+            instead of rebuilt by hand in spreadsheets.</li>
+          <li><strong>Student mobile app delivered alongside it.</strong>
+            Course content, attendance, homework and tuition status, with push notifications
+            and bilingual screens. I handled the sign-in and token-refresh flow and the local
+            caching that keeps the app usable on a weak connection.</li>
+          <li><strong>Shipped to both platforms from one codebase</strong> on a single
+            release process, and followed each feature from what an administrator enters on
+            the dashboard through to what the student sees on their phone.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-top">
+          <div class="job-title">Backend Developer</div>
+          <div class="job-when">Jun &mdash; Jul 2025</div>
+        </div>
+        <div class="job-org">PAXU &middot; MMS Software <span>&middot; freelance &middot; team of 7</span></div>
+        <ul class="b">
+          <li><strong>Backend for a personal-finance product.</strong>
+            Spending management, borrowing and repayment capacity, fee estimation, and
+            cost-of-living comparison.</li>
+          <li><strong>Led a platform upgrade on a live system.</strong>
+            Moved the application framework and database across several major versions,
+            sequenced so existing users kept working throughout.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-top">
+          <div class="job-title">Migration Developer &mdash; On-the-Job Training</div>
+          <div class="job-when">May &mdash; Aug 2024</div>
+        </div>
+        <div class="job-org">FPT Software Quy Nh&#417;n <span>&middot; team of ~40</span></div>
+        <ul class="b">
+          <li><strong>Enterprise content migration at scale.</strong>
+            Moved and validated pages out of legacy systems, checked data consistency across
+            environments, and maintained the QA checklists used to accept each page &mdash;
+            my first experience of a formal delivery process in a large team.</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+</div>
+
+</body>
+</html>

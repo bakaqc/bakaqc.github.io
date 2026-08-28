@@ -32,5 +32,8 @@ dist-ssr
 EXPERIENCE-HIGHLIGHTS.md
 docs/superpowers/
 
+# Job application drafts - never publish (reveals who I am applying to)
+cv/email_*.md
+
 # Local tooling output
 .playwright-mcp/
